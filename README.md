@@ -2,6 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/hpham17/esential-2016/badges/gpa.svg)](https://codeclimate.com/github/hpham17/esential-2016)
 [![Build Status](https://travis-ci.org/hpham17/esential-2016.svg?branch=master)](https://travis-ci.org/hpham17/esential-2016)
+[![Test Coverage](https://codeclimate.com/github/hpham17/esential-2016/badges/coverage.svg)](https://codeclimate.com/github/hpham17/esential-2016/coverage)
 <span style="background-color: blue; text-decoration:none; font: Verdana 7px bold; color:white; padding: 2px; margin: 2px;" ><a style="background-color: blue; text-decoration:none; font: Verdana 7px bold; color:white; padding: 2px; margin: 2px;" href="https://www.pivotaltracker.com/n/projects/1886773">PivotalTracker</a></span>
 
 ## About esential
