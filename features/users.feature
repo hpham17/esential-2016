@@ -1,14 +1,16 @@
 Feature: user signup & login
-  As a user, I want to be able to signup
+  As a user I want to be able to signup
   And then be able to login
-  so that I can use the website
+  So that I can use the website
 
 Scenario: signup
   Given I am on the home page
-  Then I should be able to sign up with "hubennj hubert123 hubqwerty@gmail.com"
-  And I should be logged in
+  When I follow "Register"
+  Then I should be able to sign up with "hubqwerty@gmail.com hubert123"
+  Then I should see "Logout"
 
 Scenario: login
-  Given a user exists with login "hubennj hubert123"
+  Given a user exists with login "hubqwerty@gmail.com hubert123"
   And I am on the home page
-  Then I should be able to log in
+  When I follow "Login"
+  Then I should be able to login with "hubqwerty@gmail.com hubert123"
