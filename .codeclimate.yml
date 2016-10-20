@@ -37,7 +37,9 @@ ratings:
   - "**.py"
 exclude_paths:
 - config/
+- features/
 - db/
+- spec/
 - script/
 - vendor/
 - "coverage/assets/0.10.0/application.js"
