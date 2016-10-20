@@ -42,4 +42,4 @@ exclude_paths:
 - spec/
 - script/
 - vendor/
-- "coverage/assets/0.10.0/application.js"
+- "coverage/assets/0.10.0/"
