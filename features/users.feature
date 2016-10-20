@@ -12,5 +12,5 @@ Scenario: signup
 Scenario: login
   Given a user exists with login "hubqwerty@gmail.com hubert123"
   And I am on the home page
-  When I follow "Login"
+  When I follow "Borrower Login"
   Then I should be able to login with "hubqwerty@gmail.com hubert123"
