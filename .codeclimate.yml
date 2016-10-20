@@ -38,7 +38,6 @@ ratings:
 exclude_paths:
 - config/
 - db/
-- features/
 - script/
-- spec/
 - vendor/
+- "coverage/assets/0.10.0/application.js"
