@@ -6,7 +6,7 @@ Feature: user signup & login
 Scenario: signup
   Given I am on the home page
   When I follow "Register"
-  Then I attempt to sign up with "hubqwerty@gmail.com hubert123"
+  Then I attempt to sign up with "hubqwerty@gmail.com hubert123 hubert123"
   Then I should see "Logout"
 
 Scenario: login
@@ -26,5 +26,13 @@ Scenario: failed login
 Scenario: failed signup
   Given I am on the home page
   When I follow "Register"
-  And I attempt to sign up with "hubqwerty@gmail.com h"
+  And I attempt to sign up with "hubqwerty@gmail.com h h"
   Then I should see "Password is too short (minimum is 6 characters)"
+  Then I should be on the signup page
+  
+Scenario: failed signup
+  Given I am on the home page
+  When I follow "Register"
+  And I attempt to sign up with "hubqwerty@gmail.com hubert123 hubert456"
+  Then I should be on the signup page
+  Then I should see "Password confirmation doesn't match Password"
