@@ -12,4 +12,4 @@ script:
 after_script:
   - bundle exec rake send_to_codeclimate
 exclude_paths:
-- "app/assets/javascripts/"
+- "coverage/assets/0.10.0/application.js"
