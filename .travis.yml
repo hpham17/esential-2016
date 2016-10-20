@@ -11,3 +11,5 @@ script:
   - bundle exec cucumber
 after_script:
   - bundle exec rake send_to_codeclimate
+exclude_paths:
+- "app/assets/javascripts/"
