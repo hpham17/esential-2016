@@ -1,4 +1,4 @@
-Then(/^I should be able to sign up with "(.*) (.*)"$/) do |email, pw|
+Then(/^I attempt to sign up with "(.*) (.*)"$/) do |email, pw|
   fill_in("Email", :with => email)
   fill_in("Password", :with => pw)
   fill_in("Password confirmation", :with => pw)
