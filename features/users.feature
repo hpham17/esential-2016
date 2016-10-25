@@ -21,16 +21,16 @@ Scenario: failed login
   And I am on the home page
   When I follow "Login"
   And I attempt to login with "hubqwerty@gmail.com hubert456"
-  Then I should be on the login page 
-  
-Scenario: failed signup
+  Then I should be on the login page
+
+Scenario: failed signup password too short
   Given I am on the home page
   When I follow "Register"
   And I attempt to sign up with "hubqwerty@gmail.com h h"
   Then I should see "Password is too short (minimum is 6 characters)"
   Then I should be on the signup page
-  
-Scenario: failed signup
+
+Scenario: failed signup passwords don't match
   Given I am on the home page
   When I follow "Register"
   And I attempt to sign up with "hubqwerty@gmail.com hubert123 hubert456"
