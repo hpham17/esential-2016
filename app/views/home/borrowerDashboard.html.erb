@@ -25,4 +25,48 @@
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container-fluid -->
+   
+    <table>
+      <tr>
+        <th>Community name &nbsp; &nbsp; &nbsp;</th>
+        <th>City &nbsp; &nbsp; &nbsp;</th>
+        <th>Loan amount &nbsp; &nbsp; &nbsp;</th>
+        <th>Loan interest &nbsp; &nbsp; &nbsp;</th>
+        <th>Loan terms &nbsp; &nbsp; &nbsp;</th>
+      </tr>
+      
+      <tr>
+        <td>1 &nbsp; &nbsp; &nbsp;</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+
+     <tr>
+        <td>1 &nbsp; &nbsp; &nbsp;</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      
+      <% @user.each do |community| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.community_city %></td>
+        <td><%= user.community_city %></td>
+        <td><%= user.community_city %></td>
+        <td><%= user.community_city %></td>
+      </tr>
+      <% end %>
+      
+    </table>
+    
+       
+
 </nav>
+
+
+
+
