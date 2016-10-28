@@ -35,33 +35,26 @@
         <th>Loan terms &nbsp; &nbsp; &nbsp;</th>
       </tr>
       
-      <tr>
-        <td>1 &nbsp; &nbsp; &nbsp;</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-      </tr>
-
-     <tr>
-        <td>1 &nbsp; &nbsp; &nbsp;</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-      </tr>
       
-      <% @user.each do |community| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.community_city %></td>
-        <td><%= user.community_city %></td>
-        <td><%= user.community_city %></td>
-        <td><%= user.community_city %></td>
-      </tr>
-      <% end %>
+      <% @data.each do |data| %>       #start loop
+        <tr>
+          <td><%= data.name %></td>  
+          <td><%= data.community_city %></td>
+          <td><%= data.community_loan_amount %></td>
+          <td><%= data.community_loan_interest %></td>
+          <td><%= data.community_loan_terms %></td>
+        </tr>
+      <% end %>                        #end loop
       
     </table>
+    
+    <table>                         
+  <tr>                          
+    <th>field1</th>
+    <th>field2</th>
+  </tr>
+
+</table>          
     
        
 
