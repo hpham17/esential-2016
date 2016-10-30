@@ -23,31 +23,55 @@
 
         </div>
         <!-- /.navbar-collapse -->
-</div>
-</nav>
+    </div>
     <!-- /.container-fluid -->
-<div class="container" style="margin-top: 50px;">
-    <table>
-      <tr>
-        <th>All Communities</th>
-      </tr>
-      <% @communities.each do |c| %>
+    
+    <body>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+
+    </body>
+   
+    <table id="LI">
+      <tbody>
         <tr>
-          <td><%= c.email %></td>
+          <th>Loan Information    </th>
         </tr>
-      <% end %>
-    </table>
-
-    <table>
-      <tr>
-        <th>All Users</th>
-      </tr>
-
-      <% @users.each do |u| %>
         <tr>
-         <td><%= link_to u.email, u %></td>
+          <th>Total $: </th>
         </tr>
-      <% end %>
+        <tr>
+          <th>Maximum Loan Amount $: </th>
+        </tr>
+        <tr>
+          <th>Interest Rate $:</th>
+        </tr>
+        <tr>
+          <th>Loan Period:</th>
+        </tr>
+      </tbody>
     </table>
+    <table id="CI">
+      <tbody>
+        <tr>
+          <th>Contact Information          </th>
+        </tr>
+        <tr>
+          <th>Phone Number: @community</th>
+        </tr>
+        <tr>
+          <th>Email:</th>
+        </tr>
+        <tr>
+          <th>Address:</th>
+        </tr>
+      </tbody>
+    </table>          
+    
+       
 
-</div>
+</nav>

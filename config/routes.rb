@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_scope :user do
+    get '/users/:id', to: 'users/sessions#show', as: 'user'
+  end
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   resources :community 
   # The priority is based upon order of creation: first created -> highest priority.

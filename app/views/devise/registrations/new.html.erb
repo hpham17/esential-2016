@@ -20,11 +20,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-  
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role, options_for_select(["Borrower", "Lender", "Admin"], "Borrower") %>
-  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
