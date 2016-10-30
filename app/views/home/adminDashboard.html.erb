@@ -23,51 +23,31 @@
 
         </div>
         <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-   
-    <table>
-      <tr>
-        <th>Community name &nbsp; &nbsp; &nbsp;</th>
-        <th>City &nbsp; &nbsp; &nbsp;</th>
-        <th>Loan amount &nbsp; &nbsp; &nbsp;</th>
-        <th>Loan interest &nbsp; &nbsp; &nbsp;</th>
-        <th>Loan terms &nbsp; &nbsp; &nbsp;</th>
-      </tr>
-      
-      <% if @data != nil %>
-        <% @data.each do |data| %>       #start loop
-          <tr>
-            <td><%= data.name %></td>  
-          </tr>
-        <% end %>                        #end loop
-      <% end %>
-    </table>
-    
-    <table>
-      <tr>
-        <th>Borrower name &nbsp; &nbsp; &nbsp;</th>
-        <th>City &nbsp; &nbsp; &nbsp;</th>
-      </tr>
-      
-      <% if @data != nil %>
-        <% @data.each do |data| %>       #start loop
-          <tr>
-            <td><%= data.name %></td>  
-            
-          </tr>
-        <% end %>                        #end loop
-      <% end %>
-    </table>
-    
-    <table>                         
-  <tr>                          
-    <th>field1</th>
-    <th>field2</th>
-  </tr>
-
-</table>          
-    
-       
-
+</div>
 </nav>
+    <!-- /.container-fluid -->
+<div class="container" style="margin-top: 50px;">
+    <table>
+      <tr>
+        <th>All Communities</th>
+      </tr>
+      <% @communities.each do |c| %>
+        <tr>
+          <td><%= c.email %></td>
+        </tr>
+      <% end %>
+    </table>
+
+    <table>
+      <tr>
+        <th>All Users</th>
+      </tr>
+
+      <% @users.each do |u| %>
+        <tr>
+         <td><%= link_to u.email, u %></td>
+        </tr>
+      <% end %>
+    </table>
+
+</div>

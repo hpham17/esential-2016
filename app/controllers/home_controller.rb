@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
   def index
     if current_user.role == 'Admin'
       @users = User.all
@@ -8,9 +9,6 @@ class HomeController < ApplicationController
       @communities = Community.all
       render 'borrowerDashboard'
     else
-      render 'communityDashboard'
     end
   end
-
-
 end
