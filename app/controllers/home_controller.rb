@@ -11,6 +11,4 @@ class HomeController < ApplicationController
     else
     end
   end
-
-
 end
