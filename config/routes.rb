@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get '/users/:id', to: 'users/sessions#show', as: 'user'
   end
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
+  resources :community 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
