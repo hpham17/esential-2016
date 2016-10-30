@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020023120) do
+ActiveRecord::Schema.define(version: 20161030214432) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "house_number"
+    t.string   "street"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "unit"
+    t.integer  "community_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.integer  "total_loan_amount"
+    t.integer  "interest_rate"
+    t.string   "terms"
+    t.string   "max_loan_amount"
+    t.string   "name"
+    t.string   "loan_period"
+    t.string   "description"
+    t.string   "number"
+    t.string   "email"
+    t.string   "website"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
