@@ -1,5 +1,7 @@
 <h2>Sign up</h2>
 
+<%= link_to "Create a Community", new_community_path %>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
