@@ -38,8 +38,7 @@
       <% if @data != nil %>
         <% @data.each do |data| %>       #start loop
           <tr>
-            <td><%= data.borrower_name %></td>  
-            <td><%= data.borrower_city %></td>
+            <td><%= data.name %></td>  
           </tr>
         <% end %>                        #end loop
       <% end %>
@@ -55,10 +54,7 @@
         <% @data.each do |data| %>       #start loop
           <tr>
             <td><%= data.name %></td>  
-            <td><%= data.community_city %></td>
-            <td><%= data.community_loan_amount %></td>
-            <td><%= data.community_loan_interest %></td>
-            <td><%= data.community_loan_terms %></td>
+            
           </tr>
         <% end %>                        #end loop
       <% end %>
