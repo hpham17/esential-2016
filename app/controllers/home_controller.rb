@@ -9,6 +9,7 @@ class HomeController < ApplicationController
       @communities = Community.all
       render 'borrowerDashboard'
     else
+      render 'communityDashboard'
     end
   end
 end
