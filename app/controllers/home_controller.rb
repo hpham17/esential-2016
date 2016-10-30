@@ -5,14 +5,6 @@ class HomeController < ApplicationController
       
       @data = User.all
     end
-      
-    #render index
-  end
-  
-  def adminDashboard
-    if user_signed_in?
-      render 'adminDashboard'
-    end
   end
   
 end
