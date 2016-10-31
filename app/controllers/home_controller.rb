@@ -11,8 +11,8 @@ class HomeController < ApplicationController
       puts '11111111'
       puts @data
     end
-      
-    render index
+    
+    
     
   end
   

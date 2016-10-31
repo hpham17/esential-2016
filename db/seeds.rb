@@ -3,23 +3,16 @@
 #
 # Examples:
 #
+#   name, community city, community loan amount, community 
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-movies = [{:title => 'Aladdin', :rating => 'G', :release_date => '25-Nov-1992'},
-    	  {:title => 'The Terminator', :rating => 'R', :release_date => '26-Oct-1984'},
-    	  {:title => 'When Harry Met Sally', :rating => 'R', :release_date => '21-Jul-1989'},
-      	  {:title => 'The Help', :rating => 'PG-13', :release_date => '10-Aug-2011'},
-      	  {:title => 'Chocolat', :rating => 'PG-13', :release_date => '5-Jan-2001'},
-      	  {:title => 'Amelie', :rating => 'R', :release_date => '25-Apr-2001'},
-      	  {:title => '2001: A Space Odyssey', :rating => 'G', :release_date => '6-Apr-1968'},
-      	  {:title => 'The Incredibles', :rating => 'PG', :release_date => '5-Nov-2004'},
-      	  {:title => 'Raiders of the Lost Ark', :rating => 'PG', :release_date => '12-Jun-1981'},
-      	  {:title => 'Chicken Run', :rating => 'G', :release_date => '21-Jun-2000'},
+users = [{:name => 'Aladdin', :community_city => 'nyc', :community_loan_amount => '1', :community_loan_interest => '8', :community_loan_terms => '9', :community_total_asset_amount => '10', :created_at => DateTime.now, :updated_at => DateTime.now, :encrypted_password => 'a2910u', :email => 'z@a.com'},
+    	 {:name => 'The Terminator', :community_city => 'sf', :community_loan_amount => '2', :community_loan_interest => '8', :community_loan_terms => '9', :community_total_asset_amount => '10', :created_at => DateTime.now, :updated_at => DateTime.now, :encrypted_password => 'aashd289', :email => 'b@a.com'},
+    	 {:name => 'When Harry Met Sally', :community_city => 'seattle', :community_loan_amount => '3', :community_loan_interest => '8', :community_loan_terms => '9', :community_total_asset_amount => '10', :created_at => DateTime.now, :updated_at => DateTime.now, :encrypted_password => 'ajjjzzkkwk2', :email => 'c@a.com'},
   	 ]
-  	 
 
-
-movies.each do |movie|
-  Movie.create!(movie)
+users.each do |user|
+  User.create!(user)
+  puts user
 end
