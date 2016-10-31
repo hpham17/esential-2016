@@ -21,6 +21,9 @@ module NavigationHelpers
       
     when /^the signup\s?page$/
       '/users'
+      
+    when /"(.*)" profile/
+      '/users/edit'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
