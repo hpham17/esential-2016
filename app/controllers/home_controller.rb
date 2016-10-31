@@ -1,15 +1,8 @@
 class HomeController < ApplicationController
   def index
     if user_signed_in?
-      render 'borrowerDashboard'
-      
       @data = User.all
-      puts '11111111'
-      puts '11111111'
-      puts '11111111'
-      puts '11111111'
-      puts '11111111'
-      puts @data
+      render 'borrowerDashboard'
     end
     
     
