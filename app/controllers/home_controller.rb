@@ -10,7 +10,15 @@ class HomeController < ApplicationController
       render 'borrowerDashboard'
     else
       @community = current_user.community
+      @community.images.build
       render 'communityDashboard'
     end
+  end
+  def upload
+    uploaded_io = params[:file]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+    render json: params[:file].original_filename
   end
 end

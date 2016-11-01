@@ -32,11 +32,8 @@
         <%= link_to "Create a Community", new_community_path %>
       <% end %>
 
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-        Select image to upload:
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <input type="submit" value="Upload Image" name="submit">
-    </form>
+<div id="community-photo">
+</div>
 <% if @community %>
     <%= @community.name %>
     <%= @community.description %>
@@ -79,3 +76,14 @@
         </tr>
       </tbody>
     </table>
+
+<% if @community.images.count == 0 %>
+  <form action="/upload"
+        class="dropzone"
+        id="myZone" encType="multipart/data">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+<% else %>
+  <%= image_tag @community.image.location %>
+
+<% end %>

@@ -1,6 +1,12 @@
 class CommunitiesController < ActionController::Base
     def edit
+    end
 
+    def update
+      @community = Community.find(params[:id])
+      if @community.update_attributes community_params
+        redirect_to root_path
+      end
     end
 
     def new
@@ -15,13 +21,12 @@ class CommunitiesController < ActionController::Base
     end
 
     def show
-        @community = Community.find(params[:id])
-        render 'communityDashboard'
+      @community = Community.find(params[:id])
     end
 
     private
 
     def community_params
-      params.require(:community).permit(:name, :description, :total_loan_amount, :interest_rate, :terms, :max_loan_amount, :loan_period, :number, :email, :website, :user_id)
+      params.require(:community).permit(:name, :description, :total_loan_amount, :interest_rate, :terms, :max_loan_amount, :loan_period, :number, :email, :website, :user_id, images_attributes: [:location] )
     end
 end

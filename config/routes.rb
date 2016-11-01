@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   resources :communities
+  post '/upload' => 'home#upload'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
