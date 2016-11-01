@@ -1,25 +1,23 @@
 <%= render 'layouts/navbar' %>
 
 <h1 style="text-align:center"> Community Profile </h1>
-
-<% if @community.images.count == 0 %>
-  <form action="/upload"
-        class="dropzone" style="width: 300px;
-    height: 263px;"
-        id="myZone" encType="multipart/data">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    </form>
-<% else %>
-  <%= image_tag('/uploads/' + @community.images.first.location, width: 300) %>
-<% end %>
-
-
-<% if current_user.community.nil? %>
-  <%= link_to "Create a Community", new_community_path %>
-<% else %>
+<% if !current_user.community.nil? %>
+  <% if @community.images.count == 0 %>
+    <form action="/upload"
+          class="dropzone" style="width: 300px;
+      height: 263px;"
+          id="myZone" encType="multipart/data">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </form>
+  <% else %>
+    <%= image_tag('/uploads/' + @community.images.first.location, width: 300) %>
+  <% end %>
   <div>
     Name: <%= @community.name %><br>
     Description: <%= @community.description %><br>
     Total Loan Amount: $<%= @community.total_loan_amount %>
   </div>
+
+<% else %>
+  <%= link_to "Create a community", new_community_path %>
 <% end %>
