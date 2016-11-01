@@ -168,5 +168,26 @@ fieldset:not(:first-of-type) {
 }
 
 .upper, .lower {
-  
+  overflow: hidden;
+  height: 50%;
+  width: 100%;
 }
+
+#profile-pic {
+  margin-top: 30px;
+  margin-left: 200px;
+  float:left;
+}
+#description {
+  font-size: 16px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .lower {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
