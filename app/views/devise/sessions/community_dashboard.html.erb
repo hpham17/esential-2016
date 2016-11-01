@@ -1,6 +1,11 @@
 <%= render 'layouts/navbar' %>
 
-<h1 style="text-align:center"> Community Profile </h1>
+<% if current_user.community.nil? %>
+  <h1 style="text-align:center"> Community Profile </h1>
+<% else %>
+  <h1 style="text-align:center"> <%= @community.name %> Profile </h1>
+<% end %>
+
 <% if !current_user.community.nil? %>
   <% if @community.images.count == 0 %>
     <form action="/upload"
