@@ -4,14 +4,14 @@ class Users::SessionsController < Devise::SessionsController
     if current_user.role == 'Admin'
       @users = User.all
       @communities = Community.all
-      render 'adminDashboard'
+      render 'admin_dashboard'
     elsif current_user.role == 'Borrower'
       @communities = Community.all
-      render 'borrowerDashboard'
+      render 'borrower_dashboard'
     else
       @community = current_user.community
       @community.images.build
-      render 'communityDashboard'
+      render 'community_dashboard'
     end
   end
   def show

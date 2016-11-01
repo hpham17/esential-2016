@@ -26,26 +26,64 @@
     </div>
     <!-- /.container-fluid -->
     </nav>
-<h1 style="text-align:center"> Community Profile </h1>
+    <div style="margin-top:50px;">
+
+      <% if current_user.community.nil? %>
+        <%= link_to "Create a Community", new_community_path %>
+      <% end %>
+
+<div id="community-photo">
+</div>
+<% if @community %>
+    <%= @community.name %>
+    <%= @community.description %>
+    <%= @community.total_loan_amount %>
+<% end %>
+  </div>
+
+    <table id="LI">
+      <tbody>
+        <tr>
+          <th>Loan Information    </th>
+        </tr>
+        <tr>
+          <th>Total $: </th>
+        </tr>
+        <tr>
+          <th>Maximum Loan Amount $: </th>
+        </tr>
+        <tr>
+          <th>Interest Rate $:</th>
+        </tr>
+        <tr>
+          <th>Loan Period:</th>
+        </tr>
+      </tbody>
+    </table>
+    <table id="CI">
+      <tbody>
+        <tr>
+          <th>Contact Information          </th>
+        </tr>
+        <tr>
+          <th>Phone Number: @community</th>
+        </tr>
+        <tr>
+          <th>Email:</th>
+        </tr>
+        <tr>
+          <th>Address:</th>
+        </tr>
+      </tbody>
+    </table>
 
 <% if @community.images.count == 0 %>
   <form action="/upload"
-        class="dropzone" style="width: 300px;
-    height: 263px;"
+        class="dropzone"
         id="myZone" encType="multipart/data">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     </form>
 <% else %>
-  <%= image_tag('/uploads/' + @community.images.first.location, width: 300) %>
-<% end %>
+  <%= image_tag @community.images.last.location %>
 
-
-<% if current_user.community.nil? %>
-  <%= link_to "Create a Community", new_community_path %>
-<% else %>
-  <div>
-    Name: <%= @community.name %><br>
-    Description: <%= @community.description %><br>
-    Total Loan Amount: $<%= @community.total_loan_amount %>
-  </div>
 <% end %>

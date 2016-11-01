@@ -1,0 +1,15 @@
+<%= render 'layouts/navbar' %>
+
+<div class="container">
+<h1>Welcome, <%= current_user.name %>! </h1>
+
+<div style="width:49%; float:left;" class="panel panel-primary">
+  <div class="panel-heading"> All Communities</div>
+  <ul class="list-group">
+    <% @communities.each do |c| %>
+    <li class="list-group-item"><%= link_to c.name, c %></li>
+    <% end %>
+  </ul>
+</div>
+
+</div>
