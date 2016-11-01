@@ -5,12 +5,13 @@ class CommunitiesController < ActionController::Base
     end
 
     def edit
+      @community = Community.find(params[:id])
     end
 
     def update
       @community = Community.find(params[:id])
       if @community.update_attributes community_params
-        redirect_to dashboard_path
+        redirect_to root_path
       end
     end
 
@@ -21,7 +22,7 @@ class CommunitiesController < ActionController::Base
     def create
       @community = Community.new community_params
       if @community.save
-        redirect_to dashboard_path
+        redirect_to root_path
       end
     end
 
@@ -29,7 +30,7 @@ class CommunitiesController < ActionController::Base
       @community = Community.find(params[:id])
       @community.destroy
       flash[:notice] = "#{@community.name} was successfully deleted."
-      redirect_to dashboard_path
+      redirect_to root_path
     end
 
     private
