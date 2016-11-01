@@ -33,29 +33,33 @@
 
   <body>
 
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Esential</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to('Login', new_user_session_path)  %></li>
+        <li><%= link_to('Register', new_user_registration_path)  %></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
     <div class="container">
 
-      <!-- The justified navigation menu is meant for single line per list item.
-           Multiple lines will require custom code not provided by Bootstrap. -->
-      <div class="masthead">
-        <h3 class="text-muted">Esential</h3>
-        <nav>
-          <ul class="nav nav-justified">
-            <li class="active"><a href="#">Home</a></li>
-            <% if user_signed_in? %>
-              <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-            <% else %>
-              <li><%= link_to('Login', new_user_session_path)  %></li>
-              <li><%= link_to('Sign Up', new_user_registration_path)  %></li>
-            <% end %>
-            <% if user_signed_in? %>
-              <li><%= link_to('Settings', edit_user_registration_path) %></li>
-            <% end %>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
 
       <!-- Jumbotron -->
       <div class="jumbotron">
@@ -67,26 +71,20 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
-          <h2>Safari bug warning!</h2>
-          <p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Organization History</h2>
+          <h2 id="about">Organization History</h2>
           <p>Our organization was created during the summer of 2016 during a fintech collider competition in Singapore. We won the collider and we are here in Berkeley to implement the lending platform. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+
        </div>
         <div class="col-lg-4">
           <h2>Target Audience</h2>
           <p>The target audience for this project will be low income individuals who take out payday loans, there are approximately 19 million Americans who take out these loans each year.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+
         </div>
       </div>
 
       <!-- Site footer -->
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>&copy; 2016 Esential, Inc.</p>
       </footer>
 
     </div> <!-- /container -->

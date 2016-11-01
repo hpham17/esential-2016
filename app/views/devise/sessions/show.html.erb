@@ -9,10 +9,8 @@
         Role: <%= @user.role %> <br>
         Email: <%= @user.email %> <br>
         Address: <%= @user.address %> <br>
-        Phone #: <%= @user.phone_number %>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        Phone #: <%= @user.phone_number %><br>
+        <%= link_to "Back", :back, :class => 'btn btn-primary' %>
       </div>
     </div>
   </div>
-
-<%= link_to "Back", :back %>

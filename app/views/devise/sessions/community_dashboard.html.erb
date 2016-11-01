@@ -1,4 +1,27 @@
 <%= render 'layouts/navbar' %>
+<!-- top tiles -->
+          <div class="row tile_count" style="float:right; margin: 0 50px;">
+
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
+              <div class="count">123.50</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i>Max Loan Amount</span>
+              <div class="count green">$500</div>
+
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i>Interest Rate</span>
+              <div class="count">5.00%</div>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>+1.00% </i> From last Week</span>
+            </div>
+
+
+          </div>
+          <!-- /top tiles -->
+
 
 <% if current_user.community.nil? %>
   <h1 style="text-align:center"> Community Profile </h1>
