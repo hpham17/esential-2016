@@ -1,1 +1,18 @@
-<%= @user.email %>
+<%= render 'layouts/navbar' %>
+
+
+  <div class="col-sm-6 col-md-4" style="position:absolute; margin:auto; right: 0; left:0;">
+    <div class="thumbnail">
+      <img />
+      <div class="caption">
+        <h3><%= @user.name %></h3>
+        Role: <%= @user.role %> <br>
+        Email: <%= @user.email %> <br>
+        Address: <%= @user.address %> <br>
+        Phone #: <%= @user.phone_number %>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+<%= link_to "Back", :back %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
   devise_scope :user do
     get '/users/:id', to: 'users/sessions#show', as: 'user'
+    get '/dashboard', to: 'users/sessions#dashboard'
   end
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   resources :communities

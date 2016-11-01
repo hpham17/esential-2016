@@ -1,42 +1,16 @@
-<% if @community %>
-    <%= @community.name %>
-    <%= @community.description %>
-    <%= @community.total_loan_amount %>
-<% end %>
+<%= render 'layouts/navbar' %>
+
+  <div class="col-sm-6 col-md-4" style="position:absolute; margin:auto; right: 0; left:0;">
+    <div class="thumbnail">
+      <img />
+      <div class="caption">
+        <h3><%= @community.name %></h3>
+          Description: <%= @community.description %><br>
+          Total Loan Amount: $<%= @community.total_loan_amount %><br>
+          Interest Rate: <%= @community.interest_rate %>%
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
   </div>
 
-    <table id="LI">
-      <tbody>
-        <tr>
-          <th>Loan Information    </th>
-        </tr>
-        <tr>
-          <th>Total $: </th>
-        </tr>
-        <tr>
-          <th>Maximum Loan Amount $: </th>
-        </tr>
-        <tr>
-          <th>Interest Rate $:</th>
-        </tr>
-        <tr>
-          <th>Loan Period:</th>
-        </tr>
-      </tbody>
-    </table>
-    <table id="CI">
-      <tbody>
-        <tr>
-          <th>Contact Information          </th>
-        </tr>
-        <tr>
-          <th>Phone Number: @community</th>
-        </tr>
-        <tr>
-          <th>Email:</th>
-        </tr>
-        <tr>
-          <th>Address:</th>
-        </tr>
-      </tbody>
-    </table>
+<%= link_to "Back", :back %>

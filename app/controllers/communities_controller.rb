@@ -1,4 +1,9 @@
 class CommunitiesController < ActionController::Base
+
+    def show
+      @community = Community.find(params[:id])
+    end
+
     def edit
     end
 
@@ -18,10 +23,6 @@ class CommunitiesController < ActionController::Base
       if @community.save
         redirect_to root_path
       end
-    end
-
-    def show
-      @community = Community.find(params[:id])
     end
 
     def destroy
