@@ -1,0 +1,117 @@
+// Place all the styles related to the Forms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.alert {
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+.checkbox input[type="checkbox"] {
+  height: 15px;
+  width: 16px !important;
+  margin-bottom: 0px;
+}
+.boolean.form_agrees {
+  margin-left: 123px;
+}
+
+#agree {
+  width: 0px;
+  margin-top: -28px;
+  padding-left: 126px;
+  font-size: 15px;
+}
+
+.checkbox label {
+  text-align: left;
+  padding-left: 0;
+  float: left;
+}
+
+.description {
+    margin-bottom: 100px;
+    padding: 10px;
+    bottom: 0px;
+    right: auto;
+    left: 418px;
+    margin-top: 100px;
+    width: 180px;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: left;
+    display:none;
+    position:absolute;
+    background: #fff;
+    border:1px solid #000;
+    z-index: 1000;
+}
+.alert-danger {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.form_children_name, .form_children_status, .form_adults_name, .form_adults_earnings, .form_adults_earnings_times, .form_adults_public,
+.form_adults_public_times, .form_adults_pensions, .form_adults_pensions_times, {
+	display: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+.form_adults_name input {
+  float: left;
+  width: 100% !important;
+}
+
+.form_agrees textarea {
+  width: 300px;
+  height: 300px;
+}
+
+.form_children_status {
+  padding-bottom: 15px;
+}
+
+.active {
+  display: block;
+}
+
+#form_case_number {
+  width: 246px !important;
+  margin-left: 24px;
+}
+
+.bigger-field {
+  left: -4% !important;
+}
+
+.input-group-addon {
+  padding: 5px 21px;
+}
+
+.form_child_income_times select {
+  margin-left: 225px;
+  margin-top: 10px;
+}
+
+.form_adults_pensions_times select {
+  margin-bottom: 30px;
+}
+
+.form-group .input-group input {
+  margin-bottom: 0px !important;
+}

@@ -7,10 +7,8 @@
         <h3><%= @community.name %></h3>
           Description: <%= @community.description %><br>
           Total Loan Amount: $<%= @community.total_loan_amount %><br>
-          Interest Rate: <%= @community.interest_rate %>%
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+          Interest Rate: <%= @community.interest_rate %>%<br>
+          <%= link_to "Back", :back, :class => 'btn btn-primary' %>
       </div>
     </div>
   </div>
-
-<%= link_to "Back", :back %>
