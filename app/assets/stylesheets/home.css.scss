@@ -39,15 +39,13 @@ body {
 
 @media (min-width: 992px) {
 .tile_count .tile_stats_count {
-  margin: 10px 0;
+  margin: 12px 0 22px;
   display: inline-block;
-  margin: 29px;
   border-bottom: 0;
-  text-align: center;
   padding: 10px 10px 0 27px;
 }
 .col-md-2 {
-    width: 18.667%;
+    width: 33.667%;
 }
 }
 
@@ -58,8 +56,7 @@ body {
   font-weight: 600;
 }
 .tile_count {
-  width: 100%;
-  padding: 50px 0;
+  width: 50%;
 }
 
 #user_remember_me {
