@@ -1,41 +1,37 @@
 <%= render 'layouts/navbar' %>
 
 <div class="container">
-<h1 style="width:30%; margin: 0; float:left;"> Welcome, Admin! </h1>
-<div class="row tile_count" style="float:right; margin: 0 50px;">
 
-  <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-    <span class="count_top"><i class="fa fa-clock-o"></i>Total Communities</span>
-    <div class="count"><%= @communities.count %></div>
+  <h1 style="width:30%; margin: 0; float:left;"> Welcome, Admin! </h1>
+  <div class="row tile_count" style="float:right; margin: 0 50px;">
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-clock-o"></i>Total Communities</span>
+      <div class="count"><%= @communities.count %></div>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-clock-o"></i>Total Users  </span>
+      <div class="count"><%= @users.count %></div>
+    </div>
   </div>
-  <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-    <span class="count_top"><i class="fa fa-clock-o"></i>Total Users  </span>
-    <div class="count"><%= @users.count %></div>
+
+  <div style="width:49%; float:left;" class="panel panel-primary">
+    <div class="panel-heading"> All Communities</div>
+    <ul class="list-group">
+      <% @communities.each do |c| %>
+      <li class="list-group-item"><%= link_to c.name, c %></li>
+      <% end %>
+    </ul>
   </div>
 
+    <div style="width:49%; float:right;" class="panel panel-primary">
+      <div class="panel-heading"> All Users</div>
+        <ul class="list-group">
+          <% @users.each do |u| %>
+          <li class="list-group-item"><%= link_to u.name, u %> <% if u != current_user %><%= link_to "Delete", user_registration_path(id: u.id), data: { confirm: "Are you sure?" }, :method => :delete, :class => 'btn btn-primary' %><% end%></li>
 
-</div>
+          <% end %>
+        </ul>
+  </div>
 
-<div style="width:49%; float:left;" class="panel panel-primary">
-  <div class="panel-heading"> All Communities</div>
-  <ul class="list-group">
-    <% @communities.each do |c| %>
-    <li class="list-group-item"><%= link_to c.name, c %></li>
-    <% end %>
-  </ul>
-</div>
-
-  <div style="width:49%; float:right;" class="panel panel-primary">
-    <div class="panel-heading"> All Users</div>
-
-      <ul class="list-group">
-        <% @users.each do |u| %>
-        <li class="list-group-item"><%= link_to u.name, u %></li>
-        <% end %>
-      </ul>
-</div>
-
-
-
-
+<!-- container end -->
 </div>

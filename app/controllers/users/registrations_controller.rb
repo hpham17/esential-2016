@@ -19,10 +19,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
+
+  def destroy
+    User.destroy(params[:id])
+    flash[:notice] = "User deleted."
+    redirect_to dashboard_path
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

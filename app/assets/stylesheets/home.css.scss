@@ -65,3 +65,13 @@ body {
 #user_remember_me {
   width: 12px !important;
 }
+
+.alert {
+  position: absolute;
+  margin: 0 auto;
+  top: 0;
+  right: 0;
+  width: 240px;
+  left: 0;
+  z-index: 100;
+}

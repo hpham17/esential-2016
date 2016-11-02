@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get '/users/:id', to: 'users/sessions#show', as: 'user'
     get '/dashboard', to: 'users/sessions#dashboard'
   end
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   resources :communities
   post '/upload' => 'home#upload'

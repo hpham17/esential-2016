@@ -13,7 +13,7 @@ Background:
 
 Scenario: Connect to Dashboard
   Then I should be on the borrower dashboard
-  
+
 Scenario: Communities Listed
   Given a community exists with the name "Snaq"
   And a community exists with the name "Snaq2"
@@ -29,7 +29,7 @@ Scenario: Profile link
   Given I am on borrower dashboard
   And I follow "Profile"
   Then I should be on "paige.pratt@berkeley.edu" profile
-  
+
 Scenario: Profile edit
   Given I am on "paige.pratt@berkeley.edu" profile
   And I follow "Edit"
