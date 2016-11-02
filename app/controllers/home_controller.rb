@@ -8,9 +8,11 @@ class HomeController < ApplicationController
     elsif current_user.role == 'Borrower'
       @communities = Community.all
       render 'borrowerDashboard'
-    else
+    elsif current_user.role == 'Community'
       @community = current_user.community
       render 'communityDashboard'
+    else
+      root_path
     end
   end
 end
