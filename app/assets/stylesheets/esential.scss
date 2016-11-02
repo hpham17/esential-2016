@@ -50,7 +50,7 @@ body {
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
 	box-sizing: border-box;
-	width: 88%;
+	width: 79%;
 	margin: 90px 10%;
 
 	/*stacking fieldsets above each other*/
@@ -175,7 +175,7 @@ fieldset:not(:first-of-type) {
 
 #profile-pic {
   margin-top: 30px;
-  margin-left: 200px;
+  margin-left: 100px;
   float:left;
 }
 #description {
@@ -186,8 +186,13 @@ fieldset:not(:first-of-type) {
   align-items: center;
   }
 
-  .lower {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropzone {
+  background: url('placeholder.png') no-repeat center;
+  background-size: cover;
+}

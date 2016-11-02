@@ -1,6 +1,6 @@
 @media (min-width: 768px){
 .tile_count .tile_stats_count span {
-    font-size: 13px;
+    font-size: 18px;
 }
 }
 
@@ -21,14 +21,47 @@ body {
     margin-top: 10px;
 }
 
+#last-one:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 65px;
+  border-left: 2px solid #ADB2B5;
+  margin-top: 10px;
+}
+
+
 @media (min-width: 768px) {
 .tile_count .tile_stats_count .count {
     font-size: 40px;
 }
 }
 
+@media (min-width: 992px) {
+.tile_count .tile_stats_count {
+  margin: 10px 0;
+  display: inline-block;
+  margin: 29px;
+  border-bottom: 0;
+  text-align: center;
+  padding: 10px 10px 0 27px;
+}
+.col-md-2 {
+    width: 18.667%;
+}
+}
+
+
 .tile_count .tile_stats_count .count {
-    font-size: 30px;
-    line-height: 47px;
-    font-weight: 600;
+  font-size: 30px;
+  line-height: normal;
+  font-weight: 600;
+}
+.tile_count {
+  width: 100%;
+  padding: 50px 0;
+}
+
+#user_remember_me {
+  width: 12px !important;
 }
