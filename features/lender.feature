@@ -29,6 +29,11 @@ Scenario: Logout
   When I follow "Logout"
   Then I should be on the home page
 
-  
+Scenario: Communities should not be able to see other communities
+    Given a community exists with login "second_borrower@gmail.com abc123"
+    And I follow "Logout"
+    When I follow "Login"
+    And I attempt to login with "second_borrower@gmail.com abc123"
+    And I should not see "paige.pratt@berkeley.edu"  
 
   

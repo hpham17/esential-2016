@@ -32,11 +32,22 @@ Scenario: Profile link
   
 Scenario: Profile edit
   Given I am on "paige.pratt@berkeley.edu" profile
-  And I follow "Edit"
-  And fill in "contact information" with "1234567"
-  And I follow "Save"
-  And I should see "1234567" under "contact information"
+  And fill in "Email" with "newemail@berkeley.edu"
+  And fill in "Current password" with "pap123"
+  And I press "Update"
+  Then I am on borrower dashboard
+  And I follow "Profile"
+  And I should see "newemail@berkeley.edu" under "Email"
 
 Scenario: Logout
   When I follow "Logout"
   Then I should be on the home page
+  
+Scenario: Users should not see other users
+    Given a borrower exists with login "second_borrower@gmail.com abc123"
+    And I follow "Logout"
+    When I follow "Login"
+    And I attempt to login with "second_borrower@gmail.com abc123"
+    And I should not see "paige.pratt@berkeley.edu"
+    
+  
