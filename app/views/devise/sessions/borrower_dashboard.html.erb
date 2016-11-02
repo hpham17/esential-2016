@@ -1,15 +1,31 @@
 <%= render 'layouts/navbar' %>
 
 <div class="container">
-<h1>Welcome, <%= current_user.name %>! </h1>
+<h1>Welcome <%= current_user.name %>! </h1>
 
 <div style="width:49%; float:left;" class="panel panel-primary">
-  <div class="panel-heading"> All Communities</div>
+  <table>
+      <tr>
+        <th><div class="panel-heading"> Community name</div> &nbsp; &nbsp; &nbsp;</th>
+        <th><div class="panel-heading"> Loan amount</div> &nbsp; &nbsp; &nbsp;</th>
+        <th><div class="panel-heading"> Interest rate</div> &nbsp; &nbsp; &nbsp;</th>
+        <th><div class="panel-heading"> Loan period (months)</div> &nbsp; &nbsp; &nbsp;</th>
+      </tr>
+  
   <ul class="list-group">
     <% @communities.each do |c| %>
-    <li class="list-group-item"><%= link_to c.name, c %></li>
+    <tr>
+      <th><li class="list-group-item"><%= link_to c.name, c %></li></th>
+      <th><li class="list-group-item"><%= c.max_loan_amount %></li></th>
+      <th><li class="list-group-item"><%= c.interest_rate %></li></th>
+      <th><li class="list-group-item"><%= c.loan_period %></li></th>
+    </tr>
     <% end %>
   </ul>
+  
+  </table>
+  
 </div>
+
 
 </div>

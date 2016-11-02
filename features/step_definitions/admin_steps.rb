@@ -23,3 +23,4 @@ end
 Given(/^a community "([^"]*)" exists$/) do |arg1|
   Community.create(name: arg1)
 end
+
