@@ -6,7 +6,7 @@ Feature: admin dashboard
 Background: can log in as admin
   Given I am on the home page
   When I follow "Login"
-  And I sign in with "hubes@gmail.com hubert123"
+  And I attempt to login with "hubes@gmail.com hubert123"
   Then I should see "Welcome, Admin!"
 
 Scenario: see statistics on dashboard
@@ -15,6 +15,7 @@ Scenario: see statistics on dashboard
 
 Scenario: delete a user
   Given a user "Julian Bacon" exists
+  Then I should see "Julian Bacon"
   When I click "Delete"
   And I click "Yes"
   Then I should see the flash message "User deleted."
@@ -22,7 +23,6 @@ Scenario: delete a user
   And I should not see "Julian Bacon"
 
 Scenario: view a community
-  Given I am signed in as an admin
   When I follow "All Communities"
   Given a community "Berkeley" exists
   When I follow "Berkeley"
@@ -31,4 +31,4 @@ Scenario: view a community
 Scenario: cannot signup as admin
   Given I am on the home page
   When I follow "Register"
-  Then I should not be able to select "Admin"
+  Then I should not see "Admin"
