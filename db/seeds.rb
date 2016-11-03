@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Admin
-User.create(email: 'hubes@gmail.com', password: 'hubert', name: 'Hubert Pham', address: '2212 Blue St, Berkeley, CA 94704', phone_number: '9491231234', role: 'Admin')
+User.create(email: 'chase@gmail.com', password: 'chases', name: 'Chase Smith', address: '2212 Blue St, Berkeley, CA 94704', phone_number: '9491231234', role: 'Admin')
 
 # Borrowers
 5.times do |i|

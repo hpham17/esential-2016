@@ -1,62 +1,51 @@
 <%= render 'layouts/navbar' %>
 <div class="container">
-<div class="upper">
-<h1 style="text-align:center"> Community Profile </h1>
-<% if !current_user.community.nil? %>
-<div id="profile-pic">
-    <% if @community.images.count == 0 %>
-      <form action="/upload" class="dropzone" style="width: 300px; height: 263px;"
-        id="myZone" encType="multipart/data">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      </form>
+  <div class="upper">
+    <h1 style="text-align:center"> Community Profile </h1>
+    <% if !current_user.community.nil? %>
+      <div id="profile-pic">
+          <% if @community.images.count == 0 %>
+            <form action="/upload" class="dropzone" style="width: 300px; height: 263px;"
+              id="myZone" encType="multipart/data">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            </form>
+          <% else %>
+            <%= image_tag('/uploads/' + @community.images.first.location, width: 300) %>
+          <% end %>
+      </div>
+      <div id="description">
+        Name: <%= @community.name %><br>
+        Description: <%= @community.description %><br>
+        Total Loan Amount: $<%= @community.total_loan_amount %>
+      </div>
     <% else %>
-      <%= image_tag('/uploads/' + @community.images.first.location, width: 300) %>
+      <%= link_to "Create a community", new_community_path %>
     <% end %>
-</div>
-  <div id="description">
-    Name: <%= @community.name %><br>
-    Description: <%= @community.description %><br>
-    Total Loan Amount: $<%= @community.total_loan_amount %>
+  <!-- upper -->
   </div>
 
-<% else %>
-  <%= link_to "Create a community", new_community_path %>
-<% end %>
-
-</div>
-
-
-
-
-<!-- top tiles -->
-<div class="lower">
-          <div class="row tile_count" style="margin: 0 50px;">
-
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
-              <div class="count">123.50</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i>Max Loan Amount</span>
-              <div class="count green">$500</div>
-
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i>Interest Rate</span>
-              <div class="count">5.00%</div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>+1.00% </i> From last Week</span>
-            </div>
-
-            <div id="last-one" class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i>Loan Period</span>
-              <div class="count">5 months</div>
-            </div>
-
-
-          </div>
-          <!-- /top tiles -->
-        </div>
-
-
+  <div class="lower">
+    <div class="row tile_count" style="margin: 0 50px;">
+      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
+        <div class="count">123.50</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
       </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i>Max Loan Amount</span>
+        <div class="count green">$500</div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i>Interest Rate</span>
+        <div class="count">5.00%</div>
+        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>+1.00% </i> From last Week</span>
+      </div>
+      <div id="last-one" class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i>Loan Period</span>
+        <div class="count">5 months</div>
+      </div>
+    </div>
+<!-- lower -->
+  </div>
+<!-- container -->
+</div>
