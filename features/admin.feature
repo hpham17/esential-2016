@@ -20,12 +20,10 @@ Scenario: delete a user
   And I click "Yes"
   Then I should see the flash message "User deleted."
   Then I should be on my dashboard page
-  And I should not see "Julian Bacon"
 
 Scenario: view a community
-  When I follow "All Communities"
   Given a community "Berkeley" exists
-  When I follow "Berkeley"
+  When I press "Berkeley"
   Then I should see "About Berkeley"
 
 Scenario: cannot signup as admin

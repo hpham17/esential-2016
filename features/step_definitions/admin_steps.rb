@@ -13,11 +13,15 @@ Given(/^a user "([^"]*)" exists$/) do |arg1|
 end
 
 When(/^I click "([^"]*)"$/) do |arg1|
-  click_button()
+  click_button(arg1)
 end
 
 Then(/^I should not see "([^"]*)"$/) do |arg1|
   page.should have_no_content(arg1)
+end
+
+Then(/^I should see the flash message "([^"]*)"$/) do |arg1|
+  expect(flash[:notice]).to eq arg1
 end
 
 Given(/^a community "([^"]*)" exists$/) do |arg1|
