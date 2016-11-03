@@ -30,7 +30,7 @@ class CommunitiesController < ActionController::Base
       @community = Community.find(params[:id])
       @community.destroy
       flash[:notice] = "#{@community.name} was successfully deleted."
-      redirect_to root_path
+      redirect_to dashboard_path
     end
 
     private

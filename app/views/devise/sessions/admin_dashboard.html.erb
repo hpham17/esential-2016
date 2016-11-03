@@ -27,7 +27,12 @@
       <div class="panel-heading"> All Users</div>
         <ul class="list-group">
           <% @users.each do |u| %>
-          <li class="list-group-item" id="<%= u.name.gsub(/\s+/, "") %>"><%= link_to u.name, u %> <% if u != current_user %><%= link_to "Delete", user_registration_path(id: u.id), :method => :delete, :class => 'btn btn-primary' %><% end%></li>
+          <li class="list-group-item" id="<%= u.name.gsub(/\s+/, "") %>">
+            <%= link_to u.name, u %>
+            <%= u.role %>
+            <% if u != current_user %>
+              <%= link_to "Delete", user_registration_path(id: u.id), :method => :delete, :class => 'btn btn-primary' %>
+            <% end%></li>
           <% end %>
         </ul>
   </div>

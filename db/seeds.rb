@@ -11,7 +11,7 @@ User.create(email: 'chase@gmail.com', password: 'chases', name: 'Chase Smith', a
 
 # Borrowers
 5.times do |i|
-  User.create(email: "test#{i}@gmail.com", name: "Hubert#{i}", password: 'hubert')
+  User.create(email: "test#{i}@gmail.com", name: "Hubert#{i}", password: 'hubert', role: "Borrower")
 end
 
 # Lenders
