@@ -42,4 +42,5 @@ exclude_paths:
 - spec/
 - script/
 - vendor/
+- app/assets/
 - "coverage/assets/0.10.0/"
