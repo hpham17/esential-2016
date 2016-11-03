@@ -14,7 +14,7 @@ Scenario: login
   And I am on the home page
   When I follow "Login"
   And I attempt to login with "hubqwerty@gmail.com hubert123"
-  Then I should be on the home page
+  Then I should be on my dashboard
 
 Scenario: failed login
   Given a user exists with login "hubqwerty@gmail.com hubert123"
