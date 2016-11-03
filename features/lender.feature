@@ -4,33 +4,33 @@ Feature: As a lender (Community)
   And I should be able to modify them
   
 Background:
-  Given a community exists with login "paige.pratt@berkeley.edu pap123"
+  Given a community exists with login "paige.pratt@berkeley.edu pap123" and name "pedge"
   And I am on the home page
   When I follow "Login"
   And I attempt to login with "paige.pratt@berkeley.edu pap123"
 
 Scenario: Connect to Dashboard
-  Then I should be on the community dashboard
+  Then I should be on my dashboard
   
 Scenario: Edit blank page
   When I follow "Edit"
-  Then I should see a blank "description"
-  Then I should see a blank "contact information"
-  Then I should see a blank "loan information"
-  When I fill in "description" with "snaq"
-  And fill in "contact information" with "1234567"
-  And fill in "loan information" with "10 dollars"
-  And follow "Save"
-  Then I should see "snaq" under "description"
-  And I should see "1234567" under "contact information"
-  And I should see "10 dollars" under "loan information"
+  Then I should see "Description:"
+  Then I should see "Terms:"
+  Then I should see "Phone Number:"
+  When I fill in "Description" with "snaq"
+  And fill in "Terms" with "pay"
+  And fill in "Number" with "123456789"
+  And press "Update Community Info"
+  Then I should see "snaq"
+  And I should see "pay"
+  And I should see "123456789"
 
 Scenario: Logout
   When I follow "Logout"
   Then I should be on the home page
 
 Scenario: Communities should not be able to see other communities
-    Given a community exists with login "second_borrower@gmail.com abc123"
+    Given a community exists with login "second_borrower@gmail.com abc123" and name "Kev"
     And I follow "Logout"
     When I follow "Login"
     And I attempt to login with "second_borrower@gmail.com abc123"

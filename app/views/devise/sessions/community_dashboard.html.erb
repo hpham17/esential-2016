@@ -3,6 +3,7 @@
   <div class="upper">
     <h1 style="text-align:center"> Community Profile </h1>
     <% if !current_user.community.nil? %>
+      <%= link_to 'Edit', edit_community_path(@community) %>
       <div id="profile-pic">
           <% if @community.images.count == 0 %>
             <form action="/upload" class="dropzone" style="width: 300px; height: 263px;"
@@ -16,6 +17,10 @@
       <div id="description">
         Name: <%= @community.name %><br>
         Description: <%= @community.description %><br>
+        Terms: <%= @community.terms %><br>
+        Phone Number: <%= @community.number %><br>
+        Email: <%= @community.email %><br>
+        Website: <%= @community.website %><br>
       </div>
     <% else %>
       <%= link_to "Create a community", new_community_path %>
@@ -23,10 +28,11 @@
   <!-- upper -->
   </div>
 <% if @community %>
-  <div id="community" class="lower">
+  <div class="lower">
     <div class="row tile_count">
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
+
         <div class="count">$<%= @community.total_loan_amount %></div>
         <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
       </div>
@@ -41,13 +47,12 @@
       </div>
       <div id="last-one" class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-user"></i>Loan Period</span>
-        <div class="count"><%= @community.loan_period %> months</div>
+        <div class="count"> <%= @community.loan_period %></div>
       </div>
     </div>
-
-<% end %>
 <!-- lower -->
   </div>
+<% end %>
 <!-- container -->
 </div>
 

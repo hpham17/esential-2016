@@ -11,7 +11,7 @@ class CommunitiesController < ActionController::Base
     def update
       @community = Community.find(params[:id])
       if @community.update_attributes community_params
-        redirect_to root_path
+        redirect_to dashboard_path
       end
     end
 
