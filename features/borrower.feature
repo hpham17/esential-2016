@@ -6,6 +6,7 @@ Feature: borrower dashboard
 
 Background:
   Given a borrower exists with login "paige.pratt@berkeley.edu pap123"
+  And a community exists with the name "Berkeley"
   And I am on the home page
   When I follow "Login"
   And I attempt to login with "paige.pratt@berkeley.edu pap123"
@@ -21,22 +22,19 @@ Scenario: All Communities Listed
   Then I should see "Oakland"
 
 Scenario: Links to Community show pages
-  Given a community exists with the name "Berkeley"
-  And I follow "Berkeley"
+  When I follow "Berkeley"
   Then I should see "Community Profile"
 
 Scenario: Edit profile
-  Given I am on borrower dashboard
-  And I follow "Profile"
+  And I follow "Settings"
   Then I should be on "paige.pratt@berkeley.edu" profile
   And fill in "Email" with "newemail@berkeley.edu"
   And fill in "Name" with "Paige Pratt"
   And fill in "Current password" with "pap123"
   And I press "Update"
-  Then I am on borrower dashboard
-  And I follow "Profile"
-  And I should see "newemail@berkeley.edu" under "Email"
-  And I should see "Paige Pratt" under "Name"
+  And I follow "Settings"
+  Then I should see "newemail@berkeley.edu"
+  And I should see "Paige Pratt"
 
 Scenario: Logout
   When I follow "Logout"
