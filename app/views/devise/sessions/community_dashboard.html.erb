@@ -27,16 +27,16 @@
     <div class="row tile_count">
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
-        <div class="count"><%= @community.total_loan_amount %></div>
+        <div class="count">$<%= @community.total_loan_amount %></div>
         <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
       </div>
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-user"></i>Max Loan Amount</span>
-        <div class="count green"><%= @community.max_loan_amount %></div>
+        <div class="count green">$<%= @community.max_loan_amount %></div>
       </div>
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-user"></i>Interest Rate</span>
-        <div class="count"><%= @community.interest_rate %></div>
+        <div class="count"><%= @community.interest_rate %>.00%</div>
         <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>+1.00% </i> From last Week</span>
       </div>
       <div id="last-one" class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
@@ -50,3 +50,9 @@
   </div>
 <!-- container -->
 </div>
+
+<script>
+  <% if current_user.community %>
+    community_id = <%= current_user.community.id %>
+  <% end %>
+</script>
