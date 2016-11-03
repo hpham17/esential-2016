@@ -12,7 +12,7 @@ Background:
   And I attempt to login with "paige.pratt@berkeley.edu pap123"
 
 Scenario: After sign in is dashboard
-  Then I should be on the borrower dashboard
+  Then I should be on my dashboard
   And I should see "Community name"
 
 Scenario: All Communities Listed

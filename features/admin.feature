@@ -4,9 +4,21 @@ Feature: admin dashboard
   So that I can see communities and delete users
 
 Background: can log in as admin
-  Given I am on the home page
+  Given the following users exist:
+  | name         | email             | password  | role     |
+  | Hubert Pham  | hubes@gmail.com   | hubert    | Admin    |
+  | Julian Bacon | julian@gmail.com  | julian    | Borrower |
+  | Derrick Mar  | derrick@gmail.com | derrick   | Borrower |
+  | Batman       | batman@gmail.com  | batman    | Borrower |
+
+  And the following communities exist:
+  | name     | description                              |
+  | Berkeley | A small town.                            |
+  | Oakland  | Home of the Warriors                     |
+  | SF       | A very large city with lots of traffic.  |
+  And I am on the home page
   When I follow "Login"
-  And I attempt to login with "hubes@gmail.com hubert123"
+  And I attempt to login with "hubes@gmail.com hubert"
   Then I should see "Welcome, Admin!"
 
 Scenario: see statistics on dashboard
@@ -14,19 +26,17 @@ Scenario: see statistics on dashboard
   And I should see "Total Users"
 
 Scenario: delete a user
-  Given a user "Julian Bacon" exists
   Then I should see "Julian Bacon"
-  When I click "Delete"
-  And I click "Yes"
-  Then I should see the flash message "User deleted."
-  Then I should be on my dashboard page
+  When I click "Delete" next to "Julian Bacon"
+  Then I should see "User deleted."
+  And I should be on my dashboard
 
 Scenario: view a community
-  Given a community "Berkeley" exists
-  When I press "Berkeley"
-  Then I should see "About Berkeley"
+  Then I should see "Berkeley"
+  When I follow "Berkeley"
+  Then I should see "Berkeley's Community Profile"
 
 Scenario: cannot signup as admin
-  Given I am on the home page
+  Given I follow "Logout"
   When I follow "Register"
   Then I should not see "Admin"

@@ -1,30 +1,21 @@
-Then(/^I choose "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^the following users exist:$/) do |users_table|
+  users_table.hashes.each do |user|
+    @user = User.create! name: user['name'], email: user['email'], password: user['password'], role: user['role']
+  end
 end
 
-Given(/^I am signed in as an admin$/) do
-  fill_in("Email", :with => email)
-  fill_in("Password", :with => pw)
-  find('input[name="commit"]').click
+Given(/^the following communities exist:$/) do |communities_table|
+  communities_table.hashes.each do |c|
+    @community = Community.create! name: c['name'], description: c['description']
+  end
 end
 
-Given(/^a user "([^"]*)" exists$/) do |arg1|
-  User.create(name: arg1)
-end
-
-When(/^I click "([^"]*)"$/) do |arg1|
-  click_button(arg1)
+When(/^I click "([^"]*)" next to "([^"]*)"$/) do |link, name|
+  within("##{name.gsub(/\s+/, "")}") do
+    click_link(link)
+  end
 end
 
 Then(/^I should not see "([^"]*)"$/) do |arg1|
   page.should have_no_content(arg1)
 end
-
-Then(/^I should see the flash message "([^"]*)"$/) do |arg1|
-  expect(flash[:notice]).to eq arg1
-end
-
-Given(/^a community "([^"]*)" exists$/) do |arg1|
-  Community.create(name: arg1)
-end
-

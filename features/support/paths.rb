@@ -15,17 +15,17 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    
+
      when /^the login\s?page$/
       '/users/sign_in'
-      
+
     when /^the signup\s?page$/
       '/users'
 
     when /"(.*)" profile/
       '/users/edit'
       
-    when /^the borrower dashboard$/
+    when /^my dashboard$/
       '/dashboard'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
