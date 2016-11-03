@@ -185,9 +185,11 @@ fieldset:not(:first-of-type) {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px;
   }
 
 .lower {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -19,3 +19,7 @@ end
 Then(/^I should not see "([^"]*)"$/) do |arg1|
   page.should have_no_content(arg1)
 end
+
+Then(/^I should not see "([^"]*)" next to "([^"]*)"$/) do |link, name|
+  find("##{name.gsub(/\s+/, "")}").should have_no_content(link)
+end

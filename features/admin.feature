@@ -31,6 +31,10 @@ Scenario: delete a user
   Then I should see "User deleted."
   And I should be on my dashboard
 
+Scenario: cannot delete admin
+  Then I should see "Hubert Pham"
+  And I should not see "Delete" next to "Hubert Pham"
+
 Scenario: view a community
   Then I should see "Berkeley"
   When I follow "Berkeley"

@@ -19,7 +19,7 @@ end
   User.create(email: "test#{i+5}@gmail.com", name: "Hubert#{i+5}", password: 'hubert', role: "Community")
 end
 
-# Community
+# Communities
 5.times do |i|
-  Community.create(name: "Berkeley#{i}", user_id: i+5, total_loan_amount: 100, interest_rate: 5, description: 'This is a description.')
+  Community.create(name: "Berkeley#{i}", user_id: i+5, total_loan_amount: 10000, max_loan_amount: 500, interest_rate: 5, loan_period: 12, description: 'Hello! We are a humble community that loves to help those in need. We are a friendly bunch and only ask that you join our community and help around with the church and volunteer at our events. Thank you!')
 end

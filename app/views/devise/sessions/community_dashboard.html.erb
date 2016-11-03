@@ -16,7 +16,6 @@
       <div id="description">
         Name: <%= @community.name %><br>
         Description: <%= @community.description %><br>
-        Total Loan Amount: $<%= @community.total_loan_amount %>
       </div>
     <% else %>
       <%= link_to "Create a community", new_community_path %>
@@ -25,7 +24,7 @@
   </div>
 
   <div class="lower">
-    <div class="row tile_count" style="margin: 0 50px;">
+    <div class="row tile_count">
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
         <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
         <div class="count">123.50</div>
