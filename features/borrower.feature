@@ -6,7 +6,8 @@ Feature: borrower dashboard
 
 Background:
   Given a borrower exists with login "paige.pratt@berkeley.edu pap123"
-  And a community exists with the name "Berkeley"
+  Given a community exists with the name "Berkeley"
+  And a community exists with the name "Oakland"
   And I am on the home page
   When I follow "Login"
   And I attempt to login with "paige.pratt@berkeley.edu pap123"
@@ -16,8 +17,6 @@ Scenario: After sign in is dashboard
   And I should see "Community name"
 
 Scenario: All Communities Listed
-  Given a community exists with the name "Berkeley"
-  And a community exists with the name "Oakland"
   Then I should see "Berkeley"
   Then I should see "Oakland"
 
