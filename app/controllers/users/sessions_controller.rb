@@ -9,8 +9,8 @@ class Users::SessionsController < Devise::SessionsController
       @communities = Community.all
       render 'borrower_dashboard'
     else
+      @community = current_user.community
       if !current_user.community.nil?
-        @community = current_user.community
         @community.images.build
       end
       render 'community_dashboard'
