@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-16T07:18:16+00:00">2016-11-16T07:18:16+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-16T07:29:22+00:00">2016-11-16T07:29:22+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.02
+         4.12
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>13.4</td>
+        <td>13.9</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>16</td>
         <td>15</td>
         <td>1</td>
-        <td>6.8</td>
+        <td>7.0</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>24.5</td>
+        <td>25.4</td>
       </tr>
       
       <tr>
@@ -297,7 +297,7 @@
         <td>2</td>
         <td>2</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -307,7 +307,7 @@
         <td>12</td>
         <td>9</td>
         <td>3</td>
-        <td>2.3</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -327,7 +327,7 @@
         <td>11</td>
         <td>11</td>
         <td>0</td>
-        <td>7.3</td>
+        <td>7.5</td>
       </tr>
       
       <tr>
@@ -337,7 +337,7 @@
         <td>22</td>
         <td>19</td>
         <td>3</td>
-        <td>6.0</td>
+        <td>6.1</td>
       </tr>
       
       <tr>
@@ -347,7 +347,7 @@
         <td>9</td>
         <td>9</td>
         <td>0</td>
-        <td>7.7</td>
+        <td>7.9</td>
       </tr>
       
       <tr>
@@ -444,8 +444,8 @@
           <code class="ruby">  def configure_permitted_parameters</code>
         </li>
       
-        <li class="covered" data-hits="82" data-linenumber="10">
-          <span class="hits">82</span>
+        <li class="covered" data-hits="85" data-linenumber="10">
+          <span class="hits">85</span>
           
           <code class="ruby">    devise_parameter_sanitizer.permit(:sign_up, keys: [:role] )</code>
         </li>
@@ -468,8 +468,8 @@
           <code class="ruby">  def after_sign_in_path_for(resource)</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="14">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="20" data-linenumber="14">
+          <span class="hits">20</span>
           
           <code class="ruby">    dashboard_path</code>
         </li>
@@ -1266,8 +1266,8 @@
           <code class="ruby">  def dashboard</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="4">
-          <span class="hits">22</span>
+        <li class="covered" data-hits="23" data-linenumber="4">
+          <span class="hits">23</span>
           
           <code class="ruby">    if current_user.role == &#39;Admin&#39;</code>
         </li>
@@ -1290,20 +1290,20 @@
           <code class="ruby">      render &#39;admin_dashboard&#39;</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="8">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="8">
+          <span class="hits">17</span>
           
           <code class="ruby">    elsif current_user.role == &#39;Borrower&#39;</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="9">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="9">
+          <span class="hits">9</span>
           
           <code class="ruby">      @communities = Community.all</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="10">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="10">
+          <span class="hits">9</span>
           
           <code class="ruby">      render &#39;borrower_dashboard&#39;</code>
         </li>
@@ -1422,8 +1422,8 @@
           <code class="ruby">  def bootstrap_class_for flash_type</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="3">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="29" data-linenumber="3">
+          <span class="hits">29</span>
           
           <code class="ruby">    { success: &quot;alert-success&quot;, error: &quot;alert-error&quot;, alert: &quot;alert-warning&quot;, notice: &quot;alert-info&quot; }[flash_type.to_sym] || flash_type.to_s</code>
         </li>
@@ -1446,26 +1446,26 @@
           <code class="ruby">  def flash_messages(opts = {})</code>
         </li>
       
-        <li class="covered" data-hits="81" data-linenumber="7">
-          <span class="hits">81</span>
+        <li class="covered" data-hits="84" data-linenumber="7">
+          <span class="hits">84</span>
           
           <code class="ruby">    flash.each do |msg_type, message|</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="8">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="29" data-linenumber="8">
+          <span class="hits">29</span>
           
           <code class="ruby">      concat(content_tag(:div, message, class: &quot;alert #{bootstrap_class_for(msg_type)} fade in&quot;) do</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="9">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="29" data-linenumber="9">
+          <span class="hits">29</span>
           
           <code class="ruby">              concat content_tag(:button, &#39;x&#39;, class: &quot;close&quot;, data: { dismiss: &#39;alert&#39; })</code>
         </li>
       
-        <li class="covered" data-hits="28" data-linenumber="10">
-          <span class="hits">28</span>
+        <li class="covered" data-hits="29" data-linenumber="10">
+          <span class="hits">29</span>
           
           <code class="ruby">              concat message</code>
         </li>
@@ -5034,8 +5034,8 @@
           <code class="ruby">Given(/^a community exists with the name &quot;([^&quot;]*)&quot; and the zipcode &quot;([^&quot;]*)&quot;$/) do |arg1, arg2|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="2">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="2">
+          <span class="hits">4</span>
           
           <code class="ruby">  pending</code>
         </li>
@@ -5070,8 +5070,8 @@
           <code class="ruby">Given(/^a borrower exists with login &quot;(.*) (.*)&quot;$/) do |email, pw|</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="2">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="2">
+          <span class="hits">9</span>
           
           <code class="ruby">  User.create(email: email, password: pw, role: &quot;Borrower&quot;)</code>
         </li>
@@ -5094,8 +5094,8 @@
           <code class="ruby">Given(/^a community exists with the name &quot;([^&quot;]*)&quot;$/) do |community_name|</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="6">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="14" data-linenumber="6">
+          <span class="hits">14</span>
           
           <code class="ruby">  Community.create(name: community_name)</code>
         </li>
@@ -5388,20 +5388,20 @@
           <code class="ruby">And(/^I attempt to login with &quot;(.*) (.*)&quot;$/) do |email, pw|</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="14">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="14">
+          <span class="hits">22</span>
           
           <code class="ruby">  fill_in(&quot;Email&quot;, :with =&gt; email)</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="15">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="15">
+          <span class="hits">22</span>
           
           <code class="ruby">  fill_in(&quot;Password&quot;, :with =&gt; pw)</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="16">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="16">
+          <span class="hits">22</span>
           
           <code class="ruby">  find(&#39;input[name=&quot;commit&quot;]&#39;).click</code>
         </li>
@@ -5646,8 +5646,8 @@
           <code class="ruby">Given /^(?:|I )am on (.+)$/ do |page_name|</code>
         </li>
       
-        <li class="covered" data-hits="23" data-linenumber="35">
-          <span class="hits">23</span>
+        <li class="covered" data-hits="24" data-linenumber="35">
+          <span class="hits">24</span>
           
           <code class="ruby">  visit path_to(page_name)</code>
         </li>
@@ -5748,8 +5748,8 @@
           <code class="ruby">When /^(?:|I )follow &quot;([^&quot;]*)&quot;$/ do |link|</code>
         </li>
       
-        <li class="covered" data-hits="37" data-linenumber="52">
-          <span class="hits">37</span>
+        <li class="covered" data-hits="38" data-linenumber="52">
+          <span class="hits">38</span>
           
           <code class="ruby">  click_link(link)</code>
         </li>
@@ -5982,8 +5982,8 @@
           <code class="ruby">  def path_to(page_name)</code>
         </li>
       
-        <li class="covered" data-hits="33" data-linenumber="14">
-          <span class="hits">33</span>
+        <li class="covered" data-hits="34" data-linenumber="14">
+          <span class="hits">34</span>
           
           <code class="ruby">    case page_name</code>
         </li>
@@ -6000,8 +6000,8 @@
           <code class="ruby">    when /^the home\s?page$/</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="17">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="26" data-linenumber="17">
+          <span class="hits">26</span>
           
           <code class="ruby">      &#39;/&#39;</code>
         </li>
