@@ -1,0 +1,21 @@
+<%= render 'layouts/navbar' %>
+
+
+
+<table class="table">
+  <div style="width:49%; float:left;" class="panel panel-primary">
+    <div class="panel-heading"> All Loan Requests</div>
+    <ul class="list-group">
+      <% @requests.each do |r| %>
+      <li class="list-group-item">
+        Name: <%= r.user.name %><br>
+        Email: <%= r.user.email %><br>
+        Message: <%= r.body %>
+        <%= link_to "Accept", loan_request_accept_path(r.id) %>
+        <%= link_to "Reject", loan_requests_path %>
+      </li>
+
+      <% end %>
+    </ul>
+  </div>
+</table>

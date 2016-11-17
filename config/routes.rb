@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post '/images', to: 'images#create'
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   resources :communities
+  resources :loan_requests, only: [:create]
+  get '/inbox' => 'loan_requests#inbox'
+  get '/loan_request/accept' => 'loan_requests#accept'
   post '/upload' => 'home#upload'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

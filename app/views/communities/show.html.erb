@@ -1,13 +1,90 @@
 <%= render 'layouts/navbar' %>
+<%= "#{ENV['secret_key_base']}" %>
+<div class="container">
+  <div class="upper">
+    <h1 style="text-align:center"> Community Profile </h1>
 
-  <div class="col-sm-6 col-md-4" style="position:absolute; margin:auto; right: 0; left:0;">
-    <div class="thumbnail">
-      <div class="caption">
-        <h3><%= @community.name %></h3>
-          Description: <%= @community.description %><br>
-          Total Loan Amount: $<%= @community.total_loan_amount %><br>
-          Interest Rate: <%= @community.interest_rate %>%<br>
-          <%= link_to "Back", :back, :class => 'btn btn-primary' %>
+      <div id="profile-pic">
+          <% if @community.images.count == 0 %>
+            <form action="/upload" class="dropzone" style="width: 300px; height: 263px;"
+              id="myZone" encType="multipart/data">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            </form>
+          <% else %>
+            <%= image_tag('/uploads/' + @community.images.first.location, width: 300) %>
+          <% end %>
+      </div>
+      <div id="description">
+        Name: <%= @community.name %><br>
+        Description: <%= @community.description %><br>
+        Terms: <%= @community.terms %><br>
+        Phone Number: <%= @community.number %><br>
+        Email: <%= @community.email %><br>
+        Website: <%= @community.website %><br>
+      <% if current_user.role == "Borrower" %>
+        <button class="item2 btn btn-primary">Request a Loan</button>
+      <% end %>
+      </div>
+
+  <!-- upper -->
+  </div>
+<% if @community %>
+  <div class="lower">
+    <div class="row tile_count">
+      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-clock-o"></i>Total Amount</span>
+
+        <div class="count">$<%= @community.total_loan_amount %></div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i>Max Loan Amount</span>
+        <div class="count green">$<%= @community.max_loan_amount %></div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i>Interest Rate</span>
+        <div class="count"><%= @community.interest_rate %>.00%</div>
+        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>+1.00% </i> From last Week</span>
+      </div>
+      <div id="last-one" class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i>Loan Period</span>
+        <div class="count"> <%= @community.loan_period %></div>
+      </div>
+    </div>
+<!-- lower -->
+  </div>
+<% end %>
+<!-- container -->
+<div class="modal fade mymodal" id="modal-2" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"> <i class='fa fa-times'></i> </button>
+
+
+        <h4 class="modal-title" id="myModalLabel">Request a Mentor</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @loan do |l| %>
+          <%= l.label :body %>
+          <%= l.text_field :body %>
+          <%= l.hidden_field :community_id, value: @community.id %>
+          <%= l.submit %>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
+<div class="minmaxCon"></div>
+
+<!-- MODAL ABOUTME -->
+
+
+
+  <!-- END MODEL ABOUTME -->
+
+<script>
+  <% if current_user.community %>
+    community_id = <%= current_user.community.id %>
+  <% end %>
+</script>

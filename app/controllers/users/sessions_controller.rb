@@ -1,6 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
   before_action :authenticate_user!
   def dashboard
+    @loan = LoanRequest.new
     if current_user.role == 'Admin'
       @users = User.all
       @communities = Community.all

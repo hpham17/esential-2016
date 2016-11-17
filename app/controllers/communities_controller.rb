@@ -1,7 +1,8 @@
-class CommunitiesController < ActionController::Base
+class CommunitiesController < ApplicationController
 
     def show
       @community = Community.find(params[:id])
+      @loan = LoanRequest.new
     end
 
     def edit

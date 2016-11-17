@@ -21,7 +21,11 @@
         Phone Number: <%= @community.number %><br>
         Email: <%= @community.email %><br>
         Website: <%= @community.website %><br>
+
       </div>
+
+
+
     <% else %>
       <%= link_to "Create a community", new_community_path %>
     <% end %>
@@ -52,9 +56,36 @@
     </div>
 <!-- lower -->
   </div>
-<% end %>
+
 <!-- container -->
+<div class="modal fade mymodal" id="modal-2" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"> <i class='fa fa-times'></i> </button>
+
+
+        <h4 class="modal-title" id="myModalLabel">Request a Mentor</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @loan do |l| %>
+          <%= l.label :body %>
+          <%= l.text_field :body %>
+          <%= l.hidden_field :community_id, value: @community.id %>
+          <%= l.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="minmaxCon"></div>
+<% end %>
+
+<!-- MODAL ABOUTME -->
+
+
+
+  <!-- END MODEL ABOUTME -->
 
 <script>
   <% if current_user.community %>
