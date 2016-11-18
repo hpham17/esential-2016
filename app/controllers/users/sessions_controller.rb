@@ -6,7 +6,11 @@ class Users::SessionsController < Devise::SessionsController
       @communities = Community.all
       render 'admin_dashboard'
     elsif current_user.role == 'Borrower'
-      @communities = Community.all
+      if params.has_key?(:search_name)
+        @communities = Community.where(:name => :search_name)
+      else
+        @communities = Community.all
+      end
       render 'borrower_dashboard'
     else
       @community = current_user.community

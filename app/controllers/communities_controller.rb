@@ -1,5 +1,16 @@
 class CommunitiesController < ActionController::Base
 
+    def index 
+      byebug
+      if !params[:search_name].blank?
+        @communities = Community.where(:name => params[:search_name])
+      elsif !params[:search_zipcode].blank?      
+        @communites = Community.where("name LIKE ?", "%#{search_zipcode}%")
+      else
+        @communities = Community.order('name ASC')
+      end
+      redirect_to dashboard_path
+    end
     def show
       @community = Community.find(params[:id])
     end
