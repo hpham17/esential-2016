@@ -30,14 +30,14 @@
   </tbody>
 
   </table>
- <%= form_tag communities_path, :method => "get", :id => "community_search" do %>
-  <%= text_field_tag :search_name, params[:search_name], placeholder: "Search by names" %>
-  <%= submit_tag "Search", :id => "search_submit" %>
-  <% end %>
- <%= form_tag communities_path, :method => "get", :id => "community_search" do %>
-  <%= text_field_tag :search_zipcode, params[:search_zipcode], placeholder: "Search by zipcode" %>
-  <%= submit_tag "Search", :id => "search_submit" %>
-  <% end %>
+   <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
+    <%= text_field_tag :search_name, params[:search_name], placeholder: "Search by names" %>
+    <%= submit_tag "Search", :id => "search_submit" %>
+    <% end %>
+   <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
+    <%= text_field_tag :search_zipcode, params[:search_zipcode], placeholder: "Search by zipcode" %>
+    <%= submit_tag "Search", :id => "search_submit" %>
+    <% end %>
 
 
 

@@ -1,16 +1,5 @@
 class CommunitiesController < ActionController::Base
 
-    def index 
-      byebug
-      if !params[:search_name].blank?
-        @communities = Community.where(:name => params[:search_name])
-      elsif !params[:search_zipcode].blank?      
-        @communites = Community.where("name LIKE ?", "%#{search_zipcode}%")
-      else
-        @communities = Community.order('name ASC')
-      end
-      redirect_to dashboard_path
-    end
     def show
       @community = Community.find(params[:id])
     end
@@ -47,6 +36,6 @@ class CommunitiesController < ActionController::Base
     private
 
     def community_params
-      params.require(:community).permit(:name, :description, :total_loan_amount, :interest_rate, :terms, :max_loan_amount, :loan_period, :number, :email, :website, :user_id, images_attributes: [:location] )
+      params.require(:community).permit(:name, :description, :total_loan_amount, :zipcode, :interest_rate, :terms, :max_loan_amount, :loan_period, :number, :email, :website, :user_id, images_attributes: [:location] )
     end
 end
