@@ -7,7 +7,7 @@ class Users::SessionsController < Devise::SessionsController
       render 'admin_dashboard'
     elsif current_user.role == 'Borrower'
       if !params[:search_name].blank?
-        @communities = Community.where(:name => params[:search_name])
+        @communities = Community.where("name LIKE ?", "%#{params[:search_name]}%")
       elsif !params[:search_zipcode].blank?
         @communities = Community.where(:zipcode => params[:search_zipcode])
       else
