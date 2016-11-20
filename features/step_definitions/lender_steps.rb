@@ -11,12 +11,13 @@ Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given(/^a borrower submits a loan request to me with the text "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^a borrower submits a loan request to me with the text "([^"]*)"$/) do |text|
+  LoanRequest.create(body: text, user_id: User.ids.last, community_id: Community.ids.last)
+  #pending
 end
 
 When(/^I follow the link in the email$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit path_to('Inbox') # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^I should be logged in$/) do

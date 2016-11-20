@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
+  
+  #Redirecting the user to sing-in page if he is trying to access internal links
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to login_path, :notice => 'Please login first!'
+    end
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:role] )

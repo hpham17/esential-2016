@@ -1,4 +1,6 @@
 class LoanRequestsController < ApplicationController
+  before_filter :authenticate_user!
+  
   def create
     @loan = LoanRequest.new loan_params
     @loan.user_id = current_user.id
