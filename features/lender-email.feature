@@ -13,7 +13,7 @@ Scenario: loan request sent
 
 Scenario: check link
   When I follow the link in the email
-  Then I should be on the login page
+  Then I should be on the sign-in page
 
 Scenario: inbox on dashboard
   When I attempt to login with "paige.pratt@berkeley.edu pap123"

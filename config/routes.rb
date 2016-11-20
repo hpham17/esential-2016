@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/:id', to: 'users/sessions#show', as: 'user'
     get '/dashboard', to: 'users/sessions#dashboard'
-    #get '/users/sign_in', to: 'users/sessions#new', as: 'login'
+    #get '/users/sign_in' => "devise/sessions#new", :as => :login
     get '/sign-in' => "devise/sessions#new", :as => :login
   end
   post '/communities/new' => 'communities#create'
