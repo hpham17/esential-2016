@@ -3,6 +3,10 @@ Given(/^a community exists with login "(.*) (.*)" and name "([^"]*)"$/) do |emai
   Community.create(name: name, user_id: 20, user_id: a.id)
 end
 
+When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |arg1, arg2|
+  fill_in(arg1, :with => arg1)
+end
+
 When /^(?:|I )search for name "([^"]*)"$/ do |value|
   fill_in("search_name", :with => value)
   click_button("Search Name")

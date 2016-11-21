@@ -27,9 +27,9 @@ Scenario: Links to Community show pages
 Scenario: Edit profile
   And I follow "Settings"
   Then I should be on "paige.pratt@berkeley.edu" profile
-  And fill in "Email" with "newemail@berkeley.edu"
-  And fill in "Name" with "Paige Pratt"
-  And fill in "Current password" with "pap123"
+  And I fill in "Email" with "newemail@berkeley.edu"
+  And I fill in "Name" with "Paige Pratt"
+  And I fill in "Current password" with "pap123"
   And I press "Update"
   And I follow "Settings"
   Then I should see "newemail@berkeley.edu"
