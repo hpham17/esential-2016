@@ -13,13 +13,6 @@ class LoanRequestsController < ApplicationController
   def inbox
     @requests = LoanRequest.where(community_id: current_user.community.id, accepted: false)
   end
-  def accept
-    @request = LoanRequest.find(params[:id])
-    @request.update_attributes(:accepted, true)
-    redirect_to inbox_path
-  end
-  def reject
-  end
 
   private
   def loan_params

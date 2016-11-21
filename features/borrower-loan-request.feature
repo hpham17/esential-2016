@@ -25,6 +25,10 @@ Background:
 Scenario: see pop up
   Then I should see "Body"
 
+Scenario: request sad path
+  When I press "Create Loan request"
+  Then I should not see "Loan request sent"
+
 Scenario: send a request
   When I enter "loan_request[body]" with "Hi, I go to St. Pauls Church every Sunday. May I apply for a loan of $200"
   And I press "Create Loan request"

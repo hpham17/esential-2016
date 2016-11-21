@@ -20,8 +20,9 @@ $ ->
     radius = $('#radius option:selected').text()
   $('#get-codes').click ->
     $.ajax({
-      url: "http://cors.io/?https://www.zipcodeapi.com/rest/KQQyVg4np8XZgwEzzA1Gdnt2z8Atq5jbWaKSqPfPXdOeJtNj4P0hctkMBUg20zdW/radius.json/#{zip}/#{radius}/mile?minimal"
+      url: "https://www.zipcodeapi.com/rest/js-axPSJBhg32E7qBzHzCpi72pQpqdX0AFb8v3S7k8anNhNoQuYtUgAWGqm6Ek7e0jn/radius.json/#{zip}/#{radius}/mile?minimal"
       success: (data) ->
+        alert(data)
         $.get '/dashboard', { zipcodes: JSON.parse(data).zip_codes }
     });
 
