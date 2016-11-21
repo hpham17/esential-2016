@@ -1,4 +1,4 @@
-class CommunitiesController < ActionController::Base
+class CommunitiesController < ApplicationController
     def index
       @communities = Community.all
       respond_to do |format|
