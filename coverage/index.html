@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T05:16:17+00:00">2016-11-21T05:16:17+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-21T05:48:53+00:00">2016-11-21T05:48:53+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">73.08%</span></span>
+    (<span class="covered_percent"><span class="red">74.53%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.12
+         1.29
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>29</b> files in total.
-    <b>208</b> relevant lines. 
-    <span class="green"><b>152</b> lines covered</span> and
-    <span class="red"><b>56</b> lines missed </span>
+    <b>212</b> relevant lines. 
+    <span class="green"><b>158</b> lines covered</span> and
+    <span class="red"><b>54</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>2.3</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -72,12 +72,12 @@
       
       <tr>
         <td class="strong"><a href="#eb90126e6b3369c3b1f622c05906b52277cb44f7" class="src_link" title="app/controllers/users/sessions_controller.rb">app/controllers/users/sessions_controller.rb</a></td>
-        <td class="red strong">40.91 %</td>
+        <td class="red strong">54.55 %</td>
         <td>34</td>
         <td>22</td>
-        <td>9</td>
-        <td>13</td>
-        <td>0.9</td>
+        <td>12</td>
+        <td>10</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>3.4</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>3.8</td>
       </tr>
       
       <tr>
@@ -292,12 +292,12 @@
       
       <tr>
         <td class="strong"><a href="#7fb4b62dd49338393bb29c11d032cd8827c71ed8" class="src_link" title="features/step_definitions/lender_steps.rb">features/step_definitions/lender_steps.rb</a></td>
-        <td class="red strong">63.64 %</td>
-        <td>20</td>
-        <td>11</td>
-        <td>7</td>
-        <td>4</td>
-        <td>1.0</td>
+        <td class="red strong">66.67 %</td>
+        <td>26</td>
+        <td>15</td>
+        <td>10</td>
+        <td>5</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -424,8 +424,8 @@
           <code class="ruby">  def configure_permitted_parameters</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="10">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="10">
+          <span class="hits">12</span>
           
           <code class="ruby">    devise_parameter_sanitizer.permit(:sign_up, keys: [:role] )</code>
         </li>
@@ -557,11 +557,11 @@
         <div class="source_table" id="eb90126e6b3369c3b1f622c05906b52277cb44f7">
   <div class="header">
     <h3>app/controllers/users/sessions_controller.rb</h3>
-    <h4><span class="red">40.91 %</span> covered</h4>
+    <h4><span class="red">54.55 %</span> covered</h4>
     <div>
       <b>22</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
     </div>
   </div>
   
@@ -586,8 +586,8 @@
           <code class="ruby">  def dashboard</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="4">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="4">
+          <span class="hits">6</span>
           
           <code class="ruby">    if current_user.role == &#39;Admin&#39;</code>
         </li>
@@ -610,14 +610,14 @@
           <code class="ruby">      render &#39;admin_dashboard&#39;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
           
           <code class="ruby">    elsif current_user.role == &#39;Borrower&#39;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="9">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="9">
+          <span class="hits">6</span>
           
           <code class="ruby">      if !params[:search_name].blank?</code>
         </li>
@@ -634,20 +634,20 @@
           <code class="ruby">      elsif !params[:search_zipcode].blank?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
           
           <code class="ruby">        @addresses = Address.where(:zip =&gt; params[:search_zipcode])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
           
           <code class="ruby">        @communities = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
           
           <code class="ruby">        @addresses.each do |a|</code>
         </li>
@@ -670,8 +670,8 @@
           <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="18">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="18">
+          <span class="hits">4</span>
           
           <code class="ruby">        @communities = Community.order(&#39;name ASC&#39;)</code>
         </li>
@@ -682,8 +682,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="20">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="20">
+          <span class="hits">6</span>
           
           <code class="ruby">      render &#39;borrower_dashboard&#39;</code>
         </li>
@@ -826,8 +826,8 @@
           <code class="ruby">  def flash_messages(opts = {})</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="7">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="7">
+          <span class="hits">12</span>
           
           <code class="ruby">    flash.each do |msg_type, message|</code>
         </li>
@@ -916,8 +916,8 @@
           <code class="ruby">  def format</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="4">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="12" data-linenumber="4">
+          <span class="hits">12</span>
           
           <code class="ruby">    return &quot;#{house_number} #{street} #{state}, #{zip}&quot;</code>
         </li>
@@ -4637,11 +4637,11 @@
         <div class="source_table" id="7fb4b62dd49338393bb29c11d032cd8827c71ed8">
   <div class="header">
     <h3>features/step_definitions/lender_steps.rb</h3>
-    <h4><span class="red">63.64 %</span> covered</h4>
+    <h4><span class="red">66.67 %</span> covered</h4>
     <div>
-      <b>11</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <b>15</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -4681,88 +4681,124 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">When /^(?:|I )fill in &quot;([^&quot;]*)&quot; with &quot;([^&quot;]*)&quot;$/ do |field, value|</code>
+          <code class="ruby">When /^(?:|I )fill in &quot;([^&quot;]*)&quot; with the name &quot;([^&quot;]*)&quot;$/ do |field, value|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="7">
           
-          <code class="ruby">  fill_in(field, :with =&gt; value)</code>
+          
+          <code class="ruby">  fill_in(&quot;search_name&quot;, :with =&gt; value)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">  click_button(&quot;Search Name&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">Then(/^I should see &quot;([^&quot;]*)&quot; before &quot;([^&quot;]*)&quot;$/) do |arg1, arg2|</code>
+          <code class="ruby">When /^(?:|I )fill in &quot;([^&quot;]*)&quot; with zipcode &quot;([^&quot;]*)&quot;$/ do |field, value|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="11">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
-          <code class="ruby">  aString = page.body.to_s </code>
+          <code class="ruby">  fill_in(&quot;search_zipcode&quot;, :with =&gt; value)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
           
-          <code class="ruby">       if aString.index(arg1)!= nil &amp;&amp; aString.index(arg2) !=nil</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
-          
-          <code class="ruby">               if aString.index(arg1) &lt; aString.index(arg2)</code>
+          <code class="ruby">  click_button(&quot;Search Zipcode&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Then(/^I should see &quot;([^&quot;]*)&quot; before &quot;([^&quot;]*)&quot;$/) do |arg1, arg2|</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="17">
+          <span class="hits">5</span>
+          
+          <code class="ruby">  aString = page.body.to_s </code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="18">
+          <span class="hits">5</span>
+          
+          <code class="ruby">       if aString.index(arg1)!= nil &amp;&amp; aString.index(arg2) !=nil</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="19">
+          <span class="hits">4</span>
+          
+          <code class="ruby">               if aString.index(arg1) &lt; aString.index(arg2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
           <code class="ruby">               else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="15">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">               assert false,”jr_fail”</code>
+          <code class="ruby">               assert false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">               end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">       else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">               assert false,”jr_fail”</code>
+          <code class="ruby">               assert false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">       end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">end</code>
