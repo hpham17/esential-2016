@@ -7,25 +7,25 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
 
-When /^(?:|I )fill in "([^"]*)" with the name "([^"]*)"$/ do |field, value|
+When /^(?:|I )search for name "([^"]*)"$/ do |value|
   fill_in("search_name", :with => value)
   click_button("Search Name")
 end
 
-When /^(?:|I )fill in "([^"]*)" with zipcode "([^"]*)"$/ do |field, value|
-  fill_in("search_zipcode", :with => value)
+When(/^I search for zipcode "([^"]*)"$/) do |arg1|
+  fill_in("search_zipcode", :with => arg1)
   click_button("Search Zipcode")
 end
 
 Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |arg1, arg2|
   aString = page.body.to_s
        if aString.index(arg1)!= nil && aString.index(arg2) !=nil
-               if aString.index(arg1) < aString.index(arg2)
-               else
-               assert false
-               end
+        if aString.index(arg1) < aString.index(arg2)
+        else
+          assert false
+        end
        else
-               assert false
+          assert false
        end
 end
 
