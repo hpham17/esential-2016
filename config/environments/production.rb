@@ -26,6 +26,18 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  config.action_mailer.default_url_options = { :host => 'esential-2016.herokuapp.com' }
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.gmail.com',
+    :domain         => 'mail.google.com',
+    :port           => 587,
+    :user_name      => "esentialmailer@gmail.com",
+    :password       => "ChaseSmith2016",
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
