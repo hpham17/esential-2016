@@ -3,7 +3,8 @@
   <div class="upper">
     <h1 style="text-align:center"> Community Profile </h1>
     <% if !current_user.community.nil? %>
-      <%= link_to 'Edit', edit_community_path(@community) %>
+      <%= link_to 'Edit', edit_community_path(@community) %><br>
+      <%= link_to 'All Communities', communities_path %><br>
       <div id="profile-pic">
           <% if @community.images.count == 0 %>
             <form action="/upload" class="dropzone" style="width: 300px; height: 263px;"

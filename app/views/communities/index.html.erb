@@ -1,0 +1,26 @@
+  <table class="table table-responsive table-striped table-bordered">
+    <thead>
+      <tr>
+        <th><div class="panel-heading"> Community Name</div> </th>
+        <th><div class="panel-heading"> Total Loan Amount</div></th>
+        <th><div class="panel-heading"> Max Loan Amount</div></th>
+        <th><div class="panel-heading"> Interest Rate</div> </th>
+        <th><div class="panel-heading"> Loan Period (months)</div> </th>
+      </tr>
+    </thead>
+
+  <tbody>
+    <% @communities.each do |c| %>
+    <tr>
+      <td><%= link_to c.name, c %></td>
+      <td>$<%= c.total_loan_amount %></li></td>
+      <td>$<%= c.max_loan_amount %></li></td>
+      <td><%= c.interest_rate %>%</td>
+      <td><%= c.loan_period %></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+  </table>
+  
+  <%= link_to 'Back', dashboard_path %><br>

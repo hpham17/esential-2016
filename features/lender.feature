@@ -36,15 +36,5 @@ Scenario: Communities should not be able to see other communities
   And I attempt to login with "second_borrower@gmail.com abc123"
   And I should not see "paige.pratt@berkeley.edu"  
     
-Scenario: Communities can get a list of all communities
-  When I follow "See all communites"
-  Then I should be on the communites page
-  And I should see "pedge"
-
-Scenario: Communites page with all communites should be alphebetical
-  Given a community exists with the name "Berkeley"
-  Given a community exists with the name "School"
-  When I follow "See all communites"
-  Then I should see "Berkeley" before "School"
 
   
