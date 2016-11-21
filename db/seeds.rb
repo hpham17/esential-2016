@@ -21,5 +21,7 @@ end
 
 # Communities
 5.times do |i|
-  Community.create(name: "Berkeley#{i}", user_id: i+5, total_loan_amount: 10000, max_loan_amount: 500, interest_rate: 5, loan_period: 12, description: 'Hello! We are a humble community that loves to help those in need. We are a friendly bunch and only ask that you join our community and help around with the church and volunteer at our events. Thank you!')
+  a = Community.create(name: "Berkeley#{i}", user_id: i+5, total_loan_amount: 10000, max_loan_amount: 500, interest_rate: 5, loan_period: 12, description: 'Hello! We are a humble community that loves to help those in need. We are a friendly bunch and only ask that you join our community and help around with the church and volunteer at our events. Thank you!')
+  a.build_address(house_number: 2212, street: 'Bancroft St', state: 'CA', zip: 94700+i)
+  a.save
 end

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/inbox' => 'loan_requests#inbox'
   get '/loan_request/accept' => 'loan_requests#accept'
   post '/upload' => 'home#upload'
+  get '/communities/index' => 'communities#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

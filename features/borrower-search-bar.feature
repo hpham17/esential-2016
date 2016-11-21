@@ -18,15 +18,15 @@ Scenario: The list starts in alphebetical order
   And I should see "Oakland" before "SF"
 
 Scenario: Searching with a zipcode will order then by closest zipcode
-  When I fill in "Search" with "94602"
-  And I press "Search"
+  When I fill in "Search" with zipcode "94602"
+  #And I press "Search"
   Then I should see "Oakland" before "Berkeley"
   And I should see "Berkeley" before "SF"
   
 Scenario: Searching with nothing in the search bar should reset to alphabetical
-  When I fill in "Search" with "94602"
-  And I press "Search"
-  When I fill in "Search" with ""
-  And I press "Search"
+  When I fill in "Search" with zipcode "94602"
+  #And I press "Search"
+  When I fill in "Search" with zipcode ""
+  #And I press "Search"
   Then I should see "Berkeley" before "Oakland"
   And I should see "Oakland" before "SF"
