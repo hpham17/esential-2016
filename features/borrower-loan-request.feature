@@ -5,8 +5,10 @@ Feature: contact community
 
 Background:
   Given the following users exist:
-  | name         | email             | password  | role     |
-  | Batman       | batman@gmail.com  | batman    | Borrower |
+  | name        | email             | password  | role     |
+  | Batman      | batman@gmail.com  | batman    | Borrower |
+  | Batman1     | batman1@gmail.com | batman    | Borrower |
+  | Batman2     | batman2@gmail.com | batman    | Borrower |
 
   And the following communities exist:
   | name     | description                              |

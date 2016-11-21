@@ -5,11 +5,8 @@ Given(/^the following users exist:$/) do |users_table|
 end
 
 Given(/^the following communities exist:$/) do |communities_table|
-  t = 0
-  communities_table.hashes.each do |c|
-    @a = User.create! email: "test#{t}@gmail.com", password: 'hubert'
-    @community = Community.create! name: c['name'], description: c['description'], user_id: @a.id
-    t += 1
+  communities_table.hashes.each_with_index do |c, index|
+    @community = Community.create! name: c['name'], description: c['description'], user_id: index
   end
 end
 
