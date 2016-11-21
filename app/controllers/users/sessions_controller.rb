@@ -9,7 +9,11 @@ class Users::SessionsController < Devise::SessionsController
       if !params[:search_name].blank?
         @communities = Community.where("name LIKE ?", "%#{params[:search_name]}%")
       elsif !params[:search_zipcode].blank?
-        @communities = Community.where(:zipcode => params[:search_zipcode])
+        @addresses = Address.where(:zip => params[:search_zipcode])
+        @communities = []
+        @addresses.each do |a|
+          @communities << a.community
+        end
       else
         @communities = Community.order('name ASC')
       end

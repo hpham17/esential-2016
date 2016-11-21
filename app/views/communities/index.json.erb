@@ -1,0 +1,8 @@
+{
+  <% @communities.each do |community| %>
+     <%= community.name %>: null,
+  <% if community.address %>
+     <%= community.address.format %>: null,
+  <% end %>
+  <% end %>
+}

@@ -2,7 +2,7 @@
 
 <div class="container">
 <h1>Welcome, <%= current_user.name %>! </h1>
- 
+
   <table class="table table-responsive table-striped table-bordered">
     <thead>
       <tr>
@@ -11,8 +11,7 @@
         <th><div class="panel-heading"> Max Loan Amount</div></th>
         <th><div class="panel-heading"> Interest Rate</div> </th>
         <th><div class="panel-heading"> Loan Period (months)</div> </th>
-        <th><div class="panel-heading"> Zipcode</div> </th>
-
+        <th><div class="panel-heading"> Address</div> </th>
       </tr>
     </thead>
 
@@ -24,20 +23,24 @@
       <td>$<%= c.max_loan_amount %></li></td>
       <td><%= c.interest_rate %>%</td>
       <td><%= c.loan_period %></td>
-      <td><%= c.zipcode %></td>
+      <% if c.address %><td><%= c.address.format %></td>
+      <% end %>
+
     </tr>
     <% end %>
   </tbody>
 
   </table>
    <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-    <%= text_field_tag :search_name, params[:search_name], placeholder: "Search by names" %>
+    <%= text_field_tag :search_name, params[:search_name], placeholder: "Search Name" %>
     <%= submit_tag "Search", :id => "search_submit" %>
     <% end %>
-   <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-    <%= text_field_tag :search_zipcode, params[:search_zipcode], placeholder: "Search by zipcode" %>
-    <%= submit_tag "Search", :id => "search_submit" %>
-    <% end %>
+    <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
+     <%= text_field_tag :search_zipcode, params[:search_zipcode], placeholder: "Search Zipcode" %>
+     <%= submit_tag "Search", :id => "search_submit" %>
+     <% end %>
+
+<%= link_to "Calculate Distance", zip_path %>
 
 
 

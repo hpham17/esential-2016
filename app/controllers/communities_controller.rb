@@ -1,5 +1,10 @@
 class CommunitiesController < ActionController::Base
-
+    def index
+      @communities = Community.all
+      respond_to do |format|
+        format.json { render :json => @communities }
+      end
+    end
     def show
       @community = Community.find(params[:id])
     end
