@@ -15,16 +15,15 @@ Background:
   | SF       | A very large city with lots of traffic.  |
   And I am on the home page
   When I follow "Login"
-  And I attempt to login with "batman@gmail.com hubert"
-
-Scenario: choose a community
+  And I attempt to login with "batman@gmail.com batman"
   Then I should see "SF"
   When I follow "SF"
-  And I follow "Apply for a loan!"
-  Then I should see a popup
+  And I press "Request a Loan"
+
+Scenario: see pop up
+  Then I should see "Body"
 
 Scenario: send a request
-  When I apply for a loan
-  And I type "Hi, I go to St. Pauls Church every Sunday. May I apply for a loan of $200"
-  And I click "Send"
+  When I enter "loan_request[body]" with "Hi, I go to St. Pauls Church every Sunday. May I apply for a loan of $200"
+  And I press "Create Loan request"
   Then I should see "Loan request sent."

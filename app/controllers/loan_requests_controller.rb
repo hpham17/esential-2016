@@ -4,6 +4,7 @@ class LoanRequestsController < ApplicationController
     @loan.user_id = current_user.id
     if @loan.save
       LoanRequestMailer.send_email(Community.find(loan_params["community_id"]).user).deliver_now
+      flash[:notice] = "Loan request sent."
       redirect_to dashboard_path
     else
       redirect_to :back

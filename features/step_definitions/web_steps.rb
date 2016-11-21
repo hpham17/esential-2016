@@ -61,6 +61,7 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :expect
     expect(page).to have_content(text)
   end
+  save_and_open_page
 end
 
 

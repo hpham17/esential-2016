@@ -7,6 +7,12 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
 
+When /^(?:|I )enter "([^"]*)" with "([^"]*)"$/ do |field, value|
+  within('#new_loan_request') do
+    fill_in(field, :with => value)
+  end
+end
+
 Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
 end
