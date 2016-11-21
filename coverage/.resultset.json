@@ -689,14 +689,20 @@
         0,
         null,
         null,
-        null,
-        null,
         1,
         2,
         null,
         null,
         1,
-        1,
+        2,
+        2,
+        2,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
         null
       ],
       "/home/ubuntu/workspace/features/step_definitions/users_steps.rb": [
@@ -901,6 +907,6 @@
         null
       ]
     },
-    "timestamp": 1479701532
+    "timestamp": 1479705377
   }
 }

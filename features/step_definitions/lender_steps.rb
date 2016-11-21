@@ -8,5 +8,13 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
 end
 
 Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+  aString = page.body.to_s 
+       if aString.index(arg1)!= nil && aString.index(arg2) !=nil
+               if aString.index(arg1) < aString.index(arg2)
+               else
+               assert false,”jr_fail”
+               end
+       else
+               assert false,”jr_fail”
+       end
 end
