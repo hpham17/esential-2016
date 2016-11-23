@@ -43,6 +43,6 @@ class CommunitiesController < ApplicationController
     private
 
     def community_params
-      params.require(:community).permit(:name, :description, :total_loan_amount, :zipcode, :interest_rate, :terms, :max_loan_amount, :loan_period, :number, :email, :website, :user_id, images_attributes: [:location] )
+      params.require(:community).permit(:name, :description, :total_loan_amount, :interest_rate, :terms, :max_loan_amount, :loan_period, :number, :email, :website, :user_id, images_attributes: [:location] )
     end
 end

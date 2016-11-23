@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   root 'home#index'
-  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_scope :user do
     get '/users/:id', to: 'users/sessions#show', as: 'user'
     get '/dashboard', to: 'users/sessions#dashboard'
+    get '/zipcodes', to: 'users/sessions#zipcodes'
   end
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
   post '/communities/new' => 'communities#create'
   post '/images', to: 'images#create'
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 <%= render 'layouts/navbar' %>
 
 <div class="container">
@@ -31,14 +32,6 @@
   </tbody>
 
   </table>
-   <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-    <%= text_field_tag :search_name, params[:search_name], placeholder: "Search Name" %>
-    <%= submit_tag "Search Names", :id => "search_submit" %>
-    <% end %>
-    <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-     <%= text_field_tag :search_zipcode, params[:search_zipcode], placeholder: "Search Zipcode" %>
-     <%= submit_tag "Search Zipcode", :id => "search_submit" %>
-     <% end %>
 
      <select id="radius">
        <option>1</option>
@@ -67,6 +60,20 @@
   </body>
 </html>
 <br>
+     <div class="row">
+         <div class="col s12">
+           <div class="row">
+             <div class="input-field col s12">
+            <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
+               <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'autocomplete' %>
+               <label for="autocomplete">Autocomplete</label>
+               <%= submit_tag "Search", :id => "search_submit" %>
+            <% end %>
+             </div>
+           </div>
+         </div>
+       </div>
+
 
 </div>
 

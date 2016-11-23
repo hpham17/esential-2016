@@ -11,6 +11,7 @@ $ ->
       backdrop: false
       keyboard: false
     return
+  $('select').material_select();
   distance = 0
   radius = 1
   zip = 0
@@ -18,12 +19,36 @@ $ ->
     zip = $('#zip').val()
   $('#radius').change ->
     radius = $('#radius option:selected').text()
+  $.ajax({
+    url: '/communities'
+    data: {format: 'json'}
+    success: (data) ->
+      address = {}
+      i = 0
+      while i < data.length
+        address[data[i].name] = null
+        address[data[i].address] = null
+        address[data[i].zipcode] = null
+        i++
+      $('input.autocomplete').autocomplete data: address
+  });
   $('#get-codes').click ->
     $.ajax({
-      url: "https://www.zipcodeapi.com/rest/js-axPSJBhg32E7qBzHzCpi72pQpqdX0AFb8v3S7k8anNhNoQuYtUgAWGqm6Ek7e0jn/radius.json/#{zip}/#{radius}/mile?minimal"
+      url: "http://cors.io?http://www.zipcodeapi.com/rest/KQQyVg4np8XZgwEzzA1Gdnt2z8Atq5jbWaKSqPfPXdOeJtNj4P0hctkMBUg20zdW/radius.json/#{zip}/#{radius}/mile?minimal"
       success: (data) ->
-        alert(data)
-        $.get '/dashboard', { zipcodes: JSON.parse(data).zip_codes }
+        $.ajax({
+          url: '/zipcodes'
+          data: {zipcodes: JSON.parse(data).zip_codes}
+          success: (data) ->
+            alert(JSON.stringify(data))
+            # address = {}
+            # i = 0
+            # while i < data.length
+            #   address[data[i].name] = null
+            #   address[data[i].address] = null
+            #   i++
+            # $('input.autocomplete').autocomplete data: address
+        });
     });
 
   return
