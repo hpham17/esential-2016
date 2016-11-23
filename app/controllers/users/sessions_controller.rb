@@ -15,6 +15,11 @@ class Users::SessionsController < Devise::SessionsController
         @addresses.each do |a|
           @communities << a.community
         end
+      elsif !params[:communities].blank?
+        @communities = []
+        params[:communities].each do |c|
+          @communities << Community.find(c)
+        end
       else
         @communities = Community.order('name ASC')
       end
@@ -29,6 +34,16 @@ class Users::SessionsController < Devise::SessionsController
   end
   def show
     @user = User.find(params[:id])
+  end
+  def zipcodes
+    @zips = params["zipcodes"].map {|z| z.to_i}
+    @all_zips = []
+    @zips.each do |t|
+      @all_zips << [t, 0]
+    end
+    @all_zips = @all_zips.to_h
+    @communities = Community.all.reject { |c| !@all_zips.include?(c.address.zip) }
+    render json: @communities
   end
 
 

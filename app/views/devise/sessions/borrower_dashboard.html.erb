@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 <%= render 'layouts/navbar' %>
 
 <div class="container">
@@ -40,6 +41,7 @@
      <%= submit_tag "Search Zipcode", :id => "search_submit" %>
      <% end %>
 
+
      <select id="radius">
        <option>1</option>
        <option>5</option>
@@ -48,6 +50,17 @@
      <input id="zip" />
      <button id="get-codes">Get Codes</button>
 
+     <div class="row">
+         <div class="col s12">
+           <div class="row">
+             <div class="input-field col s12">
+
+               <input type="text" id="autocomplete" class="autocomplete">
+               <label for="autocomplete">Autocomplete</label>
+             </div>
+           </div>
+         </div>
+       </div>
 
 
 </div>
