@@ -17,5 +17,8 @@ class Community < ActiveRecord::Base
   #   array = array.zip(narray)
   #   array = array.to_h
   # end
+  def self.find_address(address)
+    @community = Community.all.reject { |c| c.address.format != address}
+  end
 
 end

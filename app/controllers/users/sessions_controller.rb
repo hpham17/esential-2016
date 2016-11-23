@@ -7,19 +7,9 @@ class Users::SessionsController < Devise::SessionsController
       @communities = Community.all
       render 'admin_dashboard'
     elsif current_user.role == 'Borrower'
-      if !params[:search_name].blank?
-        @communities = Community.where("name LIKE ?", "%#{params[:search_name]}%")
-      elsif !params[:search_zipcode].blank?
-        @addresses = Address.where(:zip => params[:search_zipcode])
+      if !params[:search].blank?
         @communities = []
-        @addresses.each do |a|
-          @communities << a.community
-        end
-      elsif !params[:communities].blank?
-        @communities = []
-        params[:communities].each do |c|
-          @communities << Community.find(c)
-        end
+        decode_search
       else
         @communities = Community.order('name ASC')
       end
@@ -46,5 +36,19 @@ class Users::SessionsController < Devise::SessionsController
     render json: @communities
   end
 
+  private
+  def decode_search
+    if params[:search] =~ /^\d{5}$/
+      @addresses = Address.where(:zip => params[:search])
+      @communities = []
+      @addresses.each do |a|
+        @communities << a.community
+      end
+    elsif params[:search] =~ /^\d.*\d$/
+      @communities = Community.find_address(params[:search])
+    else
+      @communities = Community.where("name LIKE ?", "%#{params[:search]}%")
+    end
+  end
 
 end
