@@ -28,6 +28,7 @@ $ ->
       while i < data.length
         address[data[i].name] = null
         address[data[i].address] = null
+        address[data[i].zipcode] = null
         i++
       $('input.autocomplete').autocomplete data: address
   });

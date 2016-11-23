@@ -46,7 +46,7 @@
            <div class="row">
              <div class="input-field col s12">
             <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-               <%= text_field_tag :search, params[:search], placeholder: "Search Zipcode", class: 'autocomplete' %>
+               <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'autocomplete' %>
                <label for="autocomplete">Autocomplete</label>
                <%= submit_tag "Search", :id => "search_submit" %>
             <% end %>

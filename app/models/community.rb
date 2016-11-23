@@ -5,7 +5,7 @@ class Community < ActiveRecord::Base
   has_many :loan_requests
   accepts_nested_attributes_for :images
   def as_json(options={})
-    { :name => self.name, :address => self.address.format  }
+    { :name => self.name, :address => self.address.format, :zipcode => self.address.zip }
   end
   # def myfunc(communities)
   #   array = []
