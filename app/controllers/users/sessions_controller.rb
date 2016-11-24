@@ -22,9 +22,11 @@ class Users::SessionsController < Devise::SessionsController
       render 'community_dashboard'
     end
   end
+
   def show
     @user = User.find(params[:id])
   end
+  
   def zipcodes
     @zips = params["zipcodes"].map {|z| z.to_i}
     @all_zips = []
