@@ -11,7 +11,13 @@ class Users::SessionsController < Devise::SessionsController
         @communities = []
         decode_search
       else
-        @communities = Community.order('name ASC')
+        if params[:sort] == "max_loan_amount"
+          @communities = Community.order('max_loan_amount ASC')
+        elsif params[:sort] == "address"
+          @communities = Community.order('address ASC')
+        else
+          @communities = Community.order('name ASC')
+        end
       end
       render 'borrower_dashboard'
     else
