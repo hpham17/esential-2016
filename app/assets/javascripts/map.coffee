@@ -13,4 +13,9 @@ jQuery ->
           position: {lat: 37.77, lng: -122.41}
           map: map
       })
+      marker = new google.maps.Marker({
+          position: {lat: gon.latitude, lng: gon.longitude}
+          map: map
+      })
+      
       

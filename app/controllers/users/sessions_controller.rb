@@ -12,7 +12,11 @@ class Users::SessionsController < Devise::SessionsController
         decode_search
       else
         @communities = Community.order('name ASC')
+        #@addresses = Address.where(:id => @communities.ids)
       end
+      #gon.your_variable = @controller_variable
+      gon.latitude = 37.7
+      gon.longitude = -122.1
       render 'borrower_dashboard'
     else
       @community = current_user.community
