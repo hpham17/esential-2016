@@ -16,4 +16,26 @@ And(/^I attempt to login with "(.*) (.*)"$/) do |email, pw|
   find('input[name="commit"]').click
 end
 
+Then(/^I should see a large map$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
 
+Then(/^I should be able to see all communities as pins$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When(/^I click on a community$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see the community's info$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see a link to its profile$/) do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given(/^a borrower exists with the login "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
