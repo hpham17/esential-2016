@@ -1,4 +1,3 @@
-
 Then(/^I attempt to sign up with "(.*) (.*) (.*)"$/) do |email, pw1, pw2|
   fill_in("Email", :with => email)
   fill_in("Password", :with => pw1)
