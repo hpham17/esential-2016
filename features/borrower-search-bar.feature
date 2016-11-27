@@ -27,3 +27,17 @@ Scenario: Searching with nothing in the search bar should reset to alphabetical
   When I search for name ""
   Then I should see "Berkeley" before "Oakland"
   And I should see "Oakland" before "SF"
+  
+  Scenario: Initial Live Search
+  Given a community exists with the name "Berzeley" and the zipcode "94701"
+  When I type in "B"
+  Then I should see "Berkeley" under suggestions
+  And I should see "Berzeley" under suggestions
+  And I should not see "Oakland" under suggestions
+  
+Scenario: Continued Live Search
+  Given a community exists with the name "Berzeley" and the zipcode "94701"
+  When I type in "Berk"
+  Then I should see "Berkeley" under suggestions
+  And I should not see "Berzeley" under suggestions
+  And I should not see "Oakland" under suggestions

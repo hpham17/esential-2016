@@ -12,10 +12,7 @@ class Users::SessionsController < Devise::SessionsController
         decode_search
       else
         @communities = Community.order('name ASC')
-        #@addresses = Address.where(:id => @communities.ids)
       end
-      gon.latitude = 37.7
-      gon.longitude = -122.1
       render 'borrower_dashboard'
     else
       @community = current_user.community
@@ -25,9 +22,11 @@ class Users::SessionsController < Devise::SessionsController
       render 'community_dashboard'
     end
   end
+
   def show
     @user = User.find(params[:id])
   end
+
   def zipcodes
     @zips = params["zipcodes"].map {|z| z.to_i}
     @all_zips = []

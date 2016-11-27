@@ -25,9 +25,9 @@
   <table class="table table-responsive table-striped table-bordered">
     <thead>
       <tr>
-        <th><div class="panel-heading"> Community Name</div> </th>
+        <th><div class="panel-heading"><%= link_to 'Community Name', dashboard_path + '?sort=community_name', :id => 'community_name' %> </div> </th>
         <th><div class="panel-heading"> Total Loan Amount</div></th>
-        <th><div class="panel-heading"> Max Loan Amount</div></th>
+        <th><div class="panel-heading"> <%= link_to 'Max Loan Amount', dashboard_path + '?sort=max_loan_amount', :id => 'max_loan_amount'%></div></th>
         <th><div class="panel-heading"> Interest Rate</div> </th>
         <th><div class="panel-heading"> Loan Period (months)</div> </th>
         <th><div class="panel-heading"> Address</div> </th>
