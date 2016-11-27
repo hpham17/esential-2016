@@ -1,8 +1,26 @@
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-<%= render 'layouts/navbar' %>
-
-<div class="container">
 <h1>Welcome, <%= current_user.name %>! </h1>
+
+<nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
+            <%= text_field_tag :search, params[:search], class: 'autocomplete', id: 'search', autocomplete: 'off' %>
+          <label for="search" style="padding-left:12px; margin-right: 5px;"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+          <% end %>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+
+
+
+
 
   <table class="table table-responsive table-striped table-bordered">
     <thead>
@@ -33,51 +51,21 @@
 
   </table>
 
-     <select id="radius">
-       <option>1</option>
-       <option>5</option>
-       <option>10</option>
-     </select>
-     <input id="zip" />
-     <button id="get-codes">Get Codes</button>
 
-<!-- Google Map -->     
-<html>
-  <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-  </head>
-  <body>
+<!-- Google Map -->
     <h3>Communities on the map</h3>
     <div id="map"></div>
-    
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJfFJrG4ThonnI919v6wzummPJfYf_Tao&callback=initMap">
-    </script>
-    
-    
-  </body>
-</html>
+      <div id="control_container"><div id="results"></div></div>
+
+
+
+
 <br>
 
-     <div class="row">
-         <div class="col s12">
-           <div class="row">
-             <div class="input-field col s12">
-            <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-               <%= text_field_tag :search, params[:search], placeholder: "Search", class: 'autocomplete' %>
-               <label for="autocomplete">Autocomplete</label>
-               <%= submit_tag "Search", :id => "search_submit" %>
-            <% end %>
-             </div>
-           </div>
-         </div>
-       </div>
 
 
-</div>
 
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJfFJrG4ThonnI919v6wzummPJfYf_Tao&callback=initMap">
+</script>

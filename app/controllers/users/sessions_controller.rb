@@ -1,12 +1,12 @@
 class Users::SessionsController < Devise::SessionsController
-  before_action :authenticate_user!
+  before_filter ->{ authenticate_user!( force: true ) }, only: [:dashboard, :show, :zipcodes]
   def dashboard
     @loan = LoanRequest.new
-    if current_user.role == 'Admin'
+    if current_user.is? :Admin
       @users = User.all
       @communities = Community.all
       render 'admin_dashboard'
-    elsif current_user.role == 'Borrower'
+    elsif current_user.is? :Borrower
       if !params[:search].blank?
         @communities = []
         decode_search
@@ -14,7 +14,6 @@ class Users::SessionsController < Devise::SessionsController
         @communities = Community.order('name ASC')
         #@addresses = Address.where(:id => @communities.ids)
       end
-      #gon.your_variable = @controller_variable
       gon.latitude = 37.7
       gon.longitude = -122.1
       render 'borrower_dashboard'

@@ -9,11 +9,12 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= flash_messages %>
-<%= include_gon %>
-<%= yield %>
-
-</body>
+<%= render 'layouts/navbar' %>
+<div class="container">
+  <body>
+  <%= flash_messages %>
+  <%= include_gon %>
+  <%= yield %>
+  </body>
+</div>
 </html>

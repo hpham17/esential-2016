@@ -22,3 +22,11 @@ $navbar-default-color: $light-orange;
 @import "esential";
 @import "forms";
 @import "home";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+* {margin: 0; padding: 0;}

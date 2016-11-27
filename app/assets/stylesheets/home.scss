@@ -105,3 +105,76 @@ body {
 .container {
   height: 100%;
 }
+
+#control_container {
+  margin: 20px;
+}
+
+#results {
+  display: none;
+  margin-top: 15px;
+  width: 465px;
+}
+
+#results .result {
+  clear: both;
+
+  animation: fadein .5s;
+  -moz-animation: fadein .5s; /* Firefox */
+  -webkit-animation: fadein .5s; /* Safari and Chrome */
+
+  background: #fff;
+  border-bottom: 1px solid #e5e5e1;
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  text-align: center;
+  width: 110px;
+}
+
+#results .result p {
+  margin: 0;
+}
+
+.result h5 {
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100px;
+  white-space: nowrap;
+}
+
+.clear-fix {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+ height: 100%;
+ width: 100%;
+}
+
+input#search {
+  padding-left: 50px;
+}
+
+@keyframes fadein {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

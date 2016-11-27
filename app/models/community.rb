@@ -4,6 +4,10 @@ class Community < ActiveRecord::Base
   has_many :images
   has_many :loan_requests
   accepts_nested_attributes_for :images
+  validate :must_have_address
+  validates :name, :description, :number, :total_loan_amount, :max_loan_amount, :interest_rate, :loan_period, presence: true
+  validates :name, uniqueness: true
+  validates :number, :total_loan_amount, :max_loan_amount, :interest_rate, :loan_period, numericality: { only_integer: true }
   def as_json(options={})
     { :name => self.name, :address => self.address.format, :zipcode => self.address.zip }
   end
@@ -20,6 +24,9 @@ class Community < ActiveRecord::Base
   def self.find_address(address)
     @community = Community.all.reject { |c| c.address.format != address}
   end
+  def must_have_address
+    errors.add(:address, 'must have address') if self.address.nil?
+  end
 
   # Gecoding address location
   #geocoded_by :address
@@ -34,8 +41,8 @@ class Community < ActiveRecord::Base
     #     end
     # end
   # geocoded_by :address,
-  #   :latitude  => :fetched_latitude,  
-  #   :longitude => :fetched_longitude  
+  #   :latitude  => :fetched_latitude,
+  #   :longitude => :fetched_longitude
   # after_validation :geocode, if: ->(obj){ obj.address.present? }#{ obj.address.present? and obj.address_changed? }
   # gon.latitude = obj.latitude
   # gon.longtitude = obj.longitude
@@ -45,5 +52,5 @@ class Community < ActiveRecord::Base
   # def full_address
   #     [country, city, street].compact.join(‘, ‘)
   # end
-  
+
 end

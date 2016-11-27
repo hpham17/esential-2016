@@ -9,6 +9,11 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :loan_requests
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+
+  def is?(role)
+    self.role == role.to_s
+  end
+  
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist

@@ -1,31 +1,35 @@
-<%= form_for @community do |f| %>
+<div class="login">
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br />
+<%= form_for @community, :html => {:id => "msform"}, validate: true do |f| %>
+<fieldset class="bigger-field">
+    <h3 class="fs-title">Create a Community</h3>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %><br />
+  <%= f.text_field :name, placeholder: 'Name * ' %><br />
 
-  <%= f.label :number %>
-  <%= f.text_field :number %><br />
+  <%= f.text_field :description, placeholder: 'Description *' %><br />
 
-  <%= f.label :website %>
-  <%= f.text_field :website %><br />
+  <%= f.text_field :number, placeholder: 'Phone Number *' %><br />
 
-  <%= f.label :total_loan_amount %>
-  <%= f.text_field :total_loan_amount %><br />
+  <%= f.text_field :website, placeholder: 'Website' %><br />
 
-  <%= f.label :max_loan_amount %>
-  <%= f.text_field :max_loan_amount %><br />
+  <%= f.text_field :total_loan_amount, placeholder: 'Total Loan Amount ($) *' %><br />
 
-  <%= f.label :interest_rate %>
-  <%= f.text_field :interest_rate %><br />
+  <%= f.text_field :max_loan_amount, placeholder: 'Max Per Loan Amount ($) *' %><br />
 
-  <%= f.label :loan_period %>
-  <%= f.text_field :loan_period %><br />
+  <%= f.text_field :interest_rate, placeholder: 'Interest Rate (%) *' %><br />
 
-  <%= f.label :terms %>
-  <%= f.text_field :terms %><br />
+  <%= f.text_field :loan_period, placeholder: 'Loan Period (months) *' %><br />
+
+  <%= f.text_field :terms, placeholder: 'Terms' %><br />
+
+  <%= label_tag :address %>
+  <%= f.fields_for :address, validate: true do |a| %>
+    <%= a.text_field :house_number, placeholder: 'House # *', validate: {presence: true} %>
+    <%= a.text_field :street, placeholder: 'Street *', validate: true %>
+    <%= a.text_field :city, placeholder: 'City *', validate: true %>
+    <%= a.text_field :state, placeholder: 'State *', validate: true %>
+    <%= a.text_field :zip, placeholder: 'Zip *', validate: true %>
+  <% end %>
 
   <div class="actions">
     <%= f.hidden_field :user_id, :value => current_user.id %>
@@ -33,4 +37,7 @@
 
 
   <%= f.submit %>
+
+  </fieldset>
 <% end %>
+</div>

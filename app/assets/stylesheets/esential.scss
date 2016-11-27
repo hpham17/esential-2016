@@ -1,14 +1,7 @@
 #mainNav {
   position:relative;
   z-index: 1;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
+  margin: 0;
 }
 
 .login {
@@ -26,8 +19,6 @@ body {
 /*custom font*/
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 
-/*basic reset*/
-* {margin: 0; padding: 0;}
 
 .medium-input {
 	float: left;
@@ -169,23 +160,34 @@ fieldset:not(:first-of-type) {
 }
 
 .upper, .lower {
-  overflow: hidden;
-  height: 50%;
+  height: 58%;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.lower {
+  height: 25%;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 #profile-pic {
-  margin-top: 30px;
-  margin-left: 100px;
+  width: 300px;
   float:left;
 }
 #description {
+  padding-top: 10px;
   font-size: 16px;
   height: 100%;
-  display: flex;
+  float: left;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  overflow: auto;
   }
 
 .lower {
