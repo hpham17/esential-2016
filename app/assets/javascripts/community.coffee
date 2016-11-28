@@ -1,7 +1,8 @@
 $ ->
   Dropzone.options.myZone = {
+    thumbnailWidth: 300,
+    thumbnailHeight: 263,
     accept: (file, done) ->
-      done()
       $.post "/images?image[location]=#{file.name}", (data) ->
         alert(data)
         return
