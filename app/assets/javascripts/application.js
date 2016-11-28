@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dropzone
 //= require bootstrap-sprockets
 //= require rails.validations
 //= require_tree .
