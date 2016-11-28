@@ -8,9 +8,8 @@
       <form>
         <div class="input-field">
           <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
-            <%= text_field_tag :search, params[:search], class: 'autocomplete', id: 'search', autocomplete: 'off' %>
+            <%= text_field_tag :search, params[:search], class: 'autocomplete', id: 'search', autocomplete: 'off', placeholder: 'Search' %>
           <label for="search" style="padding-left:12px; margin-right: 5px;"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
           <% end %>
         </div>
       </form>
@@ -25,7 +24,7 @@
   <table class="table table-responsive table-striped table-bordered">
     <thead>
       <tr>
-        <th><div class="panel-heading"><%= link_to 'Community Name', dashboard_path + '?sort=community_name', :id => 'community_name' %> </div> </th>
+        <th><div class="panel-heading"><%= link_to 'Community Name', dashboard_path + '?sort=name', :id => 'community_name' %> </div> </th>
         <th><div class="panel-heading"> Total Loan Amount</div></th>
         <th><div class="panel-heading"> <%= link_to 'Max Loan Amount', dashboard_path + '?sort=max_loan_amount', :id => 'max_loan_amount'%></div></th>
         <th><div class="panel-heading"> Interest Rate</div> </th>
