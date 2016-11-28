@@ -1,5 +1,7 @@
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css"></head>
+
 <div id="add-email" class="container">
-  <h1>Add Email</h1>
+  <h1>Account Setup</h1>
   <%= form_for(current_user, :as => 'user', :url => finish_signup_path(current_user), :html => { role: 'form'}) do |f| %>
     <% if @show_errors && current_user.errors.any? %>
       <div id="error_explanation">
@@ -9,14 +11,37 @@
       </div>
     <% end %>
     <div class="form-group">
+      <div class="controls">
+          <%= f.label :name %>
+        <%= f.text_field :name, :autofocus => true, class: 'input-lg', placeholder: 'Name' %>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
       <%= f.label :email %>
       <div class="controls">
-        <%= f.text_field :email, :autofocus => true, :value => '', class: 'form-control input-lg', placeholder: 'Example: email@me.com' %>
+        <%= f.text_field :email, :autofocus => true, :value => '', class:(@user.errors[:email].present? ? "form-control input-lg hilite" : "form-control input-lg"),  placeholder: 'Example: email@gmail.com' %>
+        <%= @user.errors[:email].first if @user.errors[:email].present? %>
         <p class="help-block">Please confirm your email address. No spam.</p>
       </div>
     </div>
+
+      <br>
+
+        <div class="form-group">
+
+          <%= f.label :role %>
+          <select class="selectpicker" data-style="btn-danger" name="user[role]" id="user_role"><option selected="selected" value="Borrower">Borrower</option>
+<option value="Community">Community</option></select>
+
+
+
+        </div>
+        <br>
     <div class="actions">
       <%= f.submit 'Continue', :class => 'btn btn-primary' %>
     </div>
   <% end %>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>

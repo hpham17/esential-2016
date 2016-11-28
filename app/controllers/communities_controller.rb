@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   before_action :authenticate_user!
   before_filter :is_community?, only: [:edit, :new, :destroy]
   def index
-    @communities = Community.all
+    @communities = Community.all.order('id ASC')
     respond_to do |format|
       format.html
       format.json { render :json => @communities }

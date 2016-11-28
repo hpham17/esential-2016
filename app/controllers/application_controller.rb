@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_filter :ensure_signup_complete, only: [:new, :create, :update, :destroy]
+  before_filter :ensure_signup_complete
 
   protected
 
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
     # Redirect to the 'finish_signup' page if the user
     # email hasn't been verified yet
-    if current_user && !current_user.email_verified?
+    if current_user && (!current_user.email_verified? || current_user.role.nil?)
       redirect_to finish_signup_path(current_user)
     end
   end

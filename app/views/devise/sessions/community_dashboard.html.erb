@@ -1,6 +1,9 @@
+
+<% if !current_user.community.nil? %>
+
 <div class="upper">
     <div class="col-xs-6 col-md-4 center">
-      <% if !current_user.community.nil? %>
+
       <div id="profile-pic">
           <% if @community.images.count == 0 %>
             <form action="/upload" class="dropzone" style="width: 300px; height: 263px;"
@@ -55,5 +58,10 @@
 <!-- lower -->
   </div>
   <% else %>
-    <%= link_to "Create a community", new_community_path %>
+  <h1 class="text-center">Welcome, <%= current_user.name%>! </h1>
+  <blockquote>
+  <%= link_to "Create a community", new_community_path %>
+</blockquote>
+
+
   <% end %>

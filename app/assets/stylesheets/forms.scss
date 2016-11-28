@@ -115,3 +115,11 @@
 .form-group .input-group input {
   margin-bottom: 0px !important;
 }
+
+.hilite {
+  border: red solid;
+}
+
+.field_with_errors input {
+  border: #ef432d solid !important;
+}

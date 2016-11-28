@@ -8,12 +8,12 @@ class User < ActiveRecord::Base
   has_one :community
   has_many :images
   has_many :loan_requests
-  validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :update }
 
   def is?(role)
     self.role == role.to_s
   end
-  
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist

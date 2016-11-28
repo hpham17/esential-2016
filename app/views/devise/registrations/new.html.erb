@@ -1,5 +1,5 @@
-<div class="login">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:id => "msform", :class => ""}) do |f| %>
+<body style="background: #001f3f;">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:id => "msform", :class => ""}) do |f| %>
   <%= devise_error_messages! %>
 
   <fieldset class="bigger-field">
@@ -33,5 +33,4 @@
     <% end %>
 
 
-
-</div>
+</body>

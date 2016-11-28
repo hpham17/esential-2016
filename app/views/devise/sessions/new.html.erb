@@ -1,4 +1,4 @@
-<div class="login">
+<body style="background: #001f3f;">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => "msform"}) do |f| %>
   <%= devise_error_messages! %>
 
@@ -22,4 +22,5 @@
       <%= render "devise/shared/links" %>
 </fieldset>
 <% end %>
-</div>
+
+</body>
