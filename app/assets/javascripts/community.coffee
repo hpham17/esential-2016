@@ -2,8 +2,9 @@ $ ->
   Dropzone.options.myZone = {
     accept: (file, done) ->
       done()
-      $.post "/images?image[location]=#{file.name};image[community_id]=#{community_id}", (data) ->
+      $.post "/images?image[location]=#{file.name}", (data) ->
         alert(data)
+        return
   };
 
   $('.item2').click (e) ->
