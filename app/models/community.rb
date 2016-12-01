@@ -5,7 +5,7 @@ class Community < ActiveRecord::Base
   has_many :loan_requests
   accepts_nested_attributes_for :images, :address,
     :reject_if => :all_blank
-  validates :name, :description, :number, :total_loan_amount, :max_loan_amount, :interest_rate, :loan_period, presence: true
+  validates :name, :description, :total_loan_amount, :max_loan_amount, :interest_rate, :loan_period, presence: true
   validates :name, uniqueness: true
   validates :number, :total_loan_amount, :max_loan_amount, :interest_rate, :loan_period, numericality: { only_integer: true }
 

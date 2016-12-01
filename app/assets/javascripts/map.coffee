@@ -94,11 +94,18 @@ geocode_address = (map, name, address, community, i) ->
   geocoder.geocode { address: address }, (results, status) ->
     if status == google.maps.GeocoderStatus.OK
       # create a marker and drop it on the name on the geocoded location
-      marker = new (google.maps.Marker)(
-        animation: google.maps.Animation.DROP
-        map: map
-        position: results[0].geometry.location
-        title: name)
+      marker = new google.maps.Marker {
+        animation: google.maps.Animation.DROP,
+        map: map,
+        position: results[0].geometry.location,
+        title: name,
+        optimized: false
+      }
+      myoverlay = new google.maps.OverlayView()
+      myoverlay.draw = ->
+        this.getPanes().markerLayer.id = 'markers'
+        return
+      myoverlay.setMap map
       infowindow = new (google.maps.InfoWindow)(content: build_results_container(community, i))
       marker.addListener 'click', ->
         infowindow.open map, marker

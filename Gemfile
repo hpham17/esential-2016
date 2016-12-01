@@ -17,7 +17,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'google-api-client', require: 'google/api_client'
+gem 'google-api-client', '~> 0.7.1', require: 'google/api_client'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -32,6 +32,8 @@ gem 'cancan'
 gem 'gon'
 gem 'client_side_validations'
 
+
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -43,6 +45,10 @@ group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
+  gem 'capybara'
+  gem 'phantomjs', '1.9.8'
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 # setup Cucumber, RSpec, autotest support
 group :test do
