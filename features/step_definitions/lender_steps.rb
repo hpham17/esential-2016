@@ -9,12 +9,12 @@ end
 
 When /^(?:|I )search for name "([^"]*)"$/ do |value|
   fill_in("search", :with => value)
-  fill_in("search", :with => "\n")
+  find("#search").native.send_key(:Enter)
 end
 
 When(/^I search for zipcode "([^"]*)"$/) do |arg1|
   fill_in("search", :with => arg1)
-  fill_in("search", :with => "\n")
+  find("#search").native.send_key(:Enter)
 end
 
 Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |arg1, arg2|

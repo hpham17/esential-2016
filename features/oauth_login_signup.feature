@@ -21,8 +21,6 @@ Background:
     When I follow "Sign in with Facebook"
     Then I should see "Failed."
 
-
-
 @omniauth_test_failure
   Scenario: A user unsuccessfully signs in with Google
     Given I am on the homepage
