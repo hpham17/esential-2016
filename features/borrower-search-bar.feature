@@ -18,28 +18,29 @@ Scenario: The list starts in alphebetical order
   And I should see "Oakland" before "SF"
 
 @javascript
-Scenario: Searching with a zipcode will order then by closest zipcode
+Scenario: Searching with a zipcode
   When I search for zipcode "94602"
   Then I should see "Oakland"
   And I should not see "Berkeley"
 
 @javascript
-Scenario: Searching with nothing in the search bar should reset to alphabetical
+Scenario: Searching with nothing in the search bar should reset to all
   When I search for zipcode "94602"
   When I search for name ""
-  Then I should see "Berkeley"
-  And I should see "Oakland" before "SF"
+  Then I should see "Berkeley1"
+  And I should see "Oakland1"
+  And I should see "SF1"
 
 Scenario: Initial Live Search
   Given a community exists with the name "Berzeley" and the zipcode "94701"
   When I type in "B"
-  Then I should see "Berkeley"
-  And I should see "Berzeley"
-  And I should not see "Oakland"
+  Then I should see "Berkeley" in the dropdown
+  And I should see "Berzeley" in the dropdown
+  And I should not see "Oakland" in the dropdown
 
 Scenario: Continued Live Search
   Given a community exists with the name "Berzeley" and the zipcode "94701"
   When I type in "Berk"
-  Then I should see "Berkeley"
-  And I should not see "Berzeley"
-  And I should not see "Oakland"
+  Then I should see "Berkeley" in the dropdown
+  And I should not see "Berzeley" in the dropdown
+  And I should not see "Oakland" in the dropdown
