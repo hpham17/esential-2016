@@ -1,24 +1,44 @@
+<body style="background: #001f3f;">
+
 <h1>Edit Existing Community</h1>
-<%= form_tag community_path(@community), :method => :PUT do %>
-  <%= label :community, :name, 'Name' %>
-  <%= text_field :community, 'name' %>
-  <%= label :community, :description, 'Description' %>
-  <%= text_field :community, 'description'%>
-  <%= label :community, :terms, 'Terms' %>
-  <%= text_field :community, 'terms' %>
-  <%= label :community, :number, 'Number' %>
-  <%= text_field :community, 'number' %>
-  <%= label :community, :email, 'Email' %>
-  <%= text_field :community, 'email' %>
-  <%= label :community, :website, 'Website' %>
-  <%= text_field :community, 'website' %>
-  <%= label :community, :max_loan_amount, 'Maximum Loan Amount' %>
-  <%= text_field :community, 'max_loan_amount' %>
-  <%= label :community, :total_loan_amount, 'Total Loan Amount' %>
-  <%= text_field :community, 'total_loan_amount' %>
-  <%= label :community, :interest_rate, 'Interest Rate' %>
-  <%= text_field :community, 'interest_rate' %>
-  <%= label :community, :loan_period, 'Loan Period' %>
-  <%= text_field :community, 'loan_period' %>
-  <%= submit_tag 'Update Community Info' %>
+<%= form_for @community,  url: @community_path, method: :put do |f|%>
+
+  <%= f.text_field :name, placeholder: 'Name * ' %><br />
+
+  <%= f.text_field :description, placeholder: 'Description *' %><br />
+
+  <%= f.text_field :number, placeholder: 'Phone Number *' %><br />
+
+  <%= f.text_field :website, placeholder: 'Website' %><br />
+
+  <%= f.text_field :total_loan_amount, placeholder: 'Total Loan Amount ($) *' %><br />
+
+  <%= f.text_field :max_loan_amount, placeholder: 'Max Per Loan Amount ($) *' %><br />
+
+  <%= f.text_field :interest_rate, placeholder: 'Interest Rate (%) *' %><br />
+
+  <%= f.text_field :loan_period, placeholder: 'Loan Period (months) *' %><br />
+
+  <%= f.text_field :terms, placeholder: 'Terms' %><br />
+
+  <%= label_tag :address %>
+  <%= f.fields_for :address, validate: true do |a| %>
+    <%= a.text_field :house_number, placeholder: 'House # *', validate: {presence: true} %>
+    <%= a.text_field :street, placeholder: 'Street *', validate: true %>
+    <%= a.text_field :city, placeholder: 'City *', validate: true %>
+    <%= a.text_field :state, placeholder: 'State *', validate: true %>
+    <%= a.text_field :zip, placeholder: 'Zip *', validate: true %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+
+  <%= f.submit %>
+
+  </fieldset>
 <% end %>
+
+
+</body>

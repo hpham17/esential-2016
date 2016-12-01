@@ -48,7 +48,7 @@ class CommunitiesController < ApplicationController
 
   private
   def is_community?
-    if !current_user.is?(:Community) || !current_user.community.nil?
+    if !current_user.is?(:Community) || current_user.community.nil?
       flash[:error] = "You cannot do this action."
       redirect_to dashboard_path
     end

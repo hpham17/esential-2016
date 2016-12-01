@@ -9,7 +9,7 @@
         <div class="input-field">
           <%= form_tag dashboard_path, :method => "get", :id => "community_search" do %>
             <%= text_field_tag :search, params[:search], class: 'autocomplete', id: 'search', autocomplete: 'off', placeholder: 'Search' %>
-          <label for="search" style="padding-left:12px; margin-right: 5px;"><i class="material-icons">search</i></label>
+          
           <% end %>
         </div>
       </form>

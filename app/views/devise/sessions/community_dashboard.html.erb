@@ -30,7 +30,6 @@
       <% end %>
       </div>
     </div>
-
 </div>
 <!-- upper -->
   <div class="lower">
@@ -56,6 +55,10 @@
       </div>
     </div>
 <!-- lower -->
+  </div>
+  <div>
+    <br><%= link_to "Edit", edit_community_path(@community.id), :class => 'btn btn-primary' %></br>
+    <br><%= link_to "All Communities", communities_path, :class => 'btn btn-primary' %></br>
   </div>
   <% else %>
   <h1 class="text-center">Welcome, <%= current_user.name%>! </h1>

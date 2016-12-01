@@ -1,6 +1,5 @@
   <div class="upper">
     <div class="col-xs-6 col-md-4 center">
-      <%= link_to "Back", :back, :class => 'btn btn-primary' %>
       <div id="profile-pic">
           <% if @community.images.count == 0 %>
             <div class="dropzone" style="width: 300px; height: 263px;"></div>
@@ -75,7 +74,7 @@
 
 
   <!-- END MODEL ABOUTME -->
-
+<%= link_to "Back", :back, :class => 'btn btn-primary' %>
 <script>
   <% if current_user.community %>
     community_id = <%= current_user.community.id %>
