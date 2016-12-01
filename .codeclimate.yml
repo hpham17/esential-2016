@@ -44,3 +44,4 @@ exclude_paths:
 - vendor/
 - app/assets/
 - "coverage/assets/0.10.0/"
+- features/support

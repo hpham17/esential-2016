@@ -30,6 +30,8 @@ module NavigationHelpers
 
     when /^the community show page$/
       '/communities/1'
+    when /^new community page$/
+      '/communities/new'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

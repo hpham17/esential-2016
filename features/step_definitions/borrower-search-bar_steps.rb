@@ -26,3 +26,10 @@ Then(/^I should not see "([^"]*)" in the dropdown$/) do |arg1|
     end
   end
 end
+
+Then(/^I should not be on my dashboard page$/) do
+  current_path = URI.parse(current_url).path
+  if current_path.respond_to? :should
+    current_path.should_not == '/dashboard'
+  end
+end

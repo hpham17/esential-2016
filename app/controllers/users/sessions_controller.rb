@@ -32,17 +32,6 @@ class Users::SessionsController < Devise::SessionsController
     @user = User.find(params[:id])
   end
 
-  def zipcodes
-    @zips = params["zipcodes"].map {|z| z.to_i}
-    @all_zips = []
-    @zips.each do |t|
-      @all_zips << [t, 0]
-    end
-    @all_zips = @all_zips.to_h
-    @communities = Community.all.reject { |c| !@all_zips.include?(c.address.zip) }
-    render json: @communities
-  end
-
   private
   def decode_search
     if params[:search] =~ /^\d{5}$/
