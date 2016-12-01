@@ -12,10 +12,10 @@ Background: can log in as admin
   | Batman       | batman@gmail.com  | batman    | Borrower |
 
   And the following communities exist:
-  | name     | description                              |
-  | Berkeley | A small town.                            |
-  | Oakland  | Home of the Warriors                     |
-  | SF       | A very large city with lots of traffic.  |
+  | name     | description                              | number | total_loan_amount | max_loan_amount | interest_rate | loan_period |
+  | Berkeley | A small town.                            | 10     | 100               | 10              | 1             | 1           |
+  | Oakland  | Home of the Warriors                     | 20     | 200               | 20              | 2             | 2           |
+  | SF       | A very large city with lots of traffic.  | 30     | 300               | 30              | 3             | 3           |
   And I am on the home page
   When I follow "Login"
   And I attempt to login with "hubes@gmail.com hubert"

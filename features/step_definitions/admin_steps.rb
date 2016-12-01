@@ -6,7 +6,7 @@ end
 
 Given(/^the following communities exist:$/) do |communities_table|
   communities_table.hashes.each_with_index do |c, index|
-    @community = Community.create! name: c['name'], description: c['description'], user_id: index
+    @community = Community.create! name: c['name'], description: c['description'], number: c['number'], total_loan_amount: c['total_loan_amount'], max_loan_amount: c['max_loan_amount'], interest_rate: c["interest_rate"], loan_period: c["loan_period"], user_id: index
   end
 end
 

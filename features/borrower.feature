@@ -21,6 +21,7 @@ Scenario: All Communities Listed
   Then I should see "Oakland"
 
 Scenario: Links to Community show pages
+  byebug
   When I follow "Berkeley"
   Then I should see "Community Profile"
 

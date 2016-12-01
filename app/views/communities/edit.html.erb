@@ -1,7 +1,8 @@
 <body style="background: #001f3f;">
 
-<h1>Edit Existing Community</h1>
-<%= form_for @community,  url: @community_path, method: :put do |f|%>
+<%= form_for @community, :html => {:id => "msform"}, validate: true do |f| %>
+<fieldset class="bigger-field">
+    <h3 class="fs-title">Create a Community</h3>
 
   <%= f.text_field :name, placeholder: 'Name * ' %><br />
 
