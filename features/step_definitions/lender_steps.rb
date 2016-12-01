@@ -8,13 +8,13 @@ When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
 end
 
 When /^(?:|I )search for name "([^"]*)"$/ do |value|
-  fill_in("search_name", :with => value)
-  click_button("Search Name")
+  fill_in("search", :with => value)
+  click_button('search')
 end
 
 When(/^I search for zipcode "([^"]*)"$/) do |arg1|
-  fill_in("search_zipcode", :with => arg1)
-  click_button("Search Zipcode")
+  fill_in("search", :with => arg1)
+  click_button("search")
 end
 
 Then(/^I should see "([^"]*)" before "([^"]*)"$/) do |arg1, arg2|
