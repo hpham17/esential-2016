@@ -19,14 +19,9 @@ Scenario: google map dynamic display
   Then I should see a Google map
   And I should be able to zoom in and out
 
-Scenario: communities on the map
-  Then I should see three markers
-  Then I should see a marker placed at zipcode "94704"
-  And I should see a marker placed at zipcode "94601"
-  And I should see a marker placed at zipcode "94101"
-
 @javascript
 Scenario: display community profile
+  Then I should see markers on the map
   When I click on the marker for "Berkeley"
   Then I should see its info window
   And I follow the link in the info window
