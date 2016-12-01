@@ -1,6 +1,6 @@
 Given(/^a community exists with login "(.*) (.*)" and name "([^"]*)"$/) do |email, pw, name|
   a = User.create(email: email, password: pw, role: "Community")
-  Community.create(name: name, user_id: 20, user_id: a.id)
+  Community.create! name: name, description: "random", user_id: a.id, max_loan_amount: 1, total_loan_amount: 1, interest_rate: 1, loan_period: 1, number: 1
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|

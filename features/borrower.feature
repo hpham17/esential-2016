@@ -39,9 +39,8 @@ Scenario: Edit profile
 Scenario: Logout
   When I follow "Logout"
   Then I should be on the home page
-  
+
 Scenario: Community zipcodes listed
-  Given a community exists with the name "Lafayette" and the zipcode "94549"
-  And I should be on my dashboard
-  Then I should see "Lafayette"
+  Then I should be on my dashboard
+  And I should see "Lafayette"
   And I should see "94549"

@@ -7,16 +7,25 @@ Background:
   Given I am on the home page
   When I follow "Login"
 
-Scenario: facebook auth
-  When I follow "Sign in with Facebook"
-  And I fill in "Email or Phone Number" with "paige@gmail.com"
-  And I fill in "Password" with "password0"
-  And I press "Log in"
-  Then I should be on my dashboard
-  
-Scenario: google auth
-  When I follow "Sign in with Google"
-  And I fill in "Email" with "paige@gmail.com"
-  And I fill in "Password" with "password0"
-  And I press "Log in"
-  Then I should be on my dashboard
+@omniauth_facebook_test_success
+  Scenario: A user successfully signs in with Facebook
+    Given I am on the homepage
+    And I follow "Login"
+    When I follow "Sign in with Facebook"
+    Then I should see "Login successful."
+
+@omniauth_test_failure
+  Scenario: A user unsuccessfully signs in with Facebook
+    Given I am on the homepage
+    And I follow "Login"
+    When I follow "Sign in with Facebook"
+    Then I should see "Failed."
+
+
+
+@omniauth_test_failure
+  Scenario: A user unsuccessfully signs in with Google
+    Given I am on the homepage
+    And I follow "Login"
+    When I follow "Sign in with Google"
+    Then I should see "Failed."

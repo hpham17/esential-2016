@@ -3,17 +3,5 @@ Given(/^a borrower exists with login "(.*) (.*)"$/) do |email, pw|
 end
 
 Given(/^a community exists with the name "([^"]*)"$/) do |community_name|
-  Community.create(name: community_name)
-end
-
-When(/^I apply for a loan$/) do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When(/^I type "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When(/^I click "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  Community.create! name: community_name, description: "random", user_id: 1, max_loan_amount: 1, total_loan_amount: 1, interest_rate: 1, loan_period: 1, number: 1
 end
