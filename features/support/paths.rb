@@ -27,6 +27,9 @@ module NavigationHelpers
 
     when /^my dashboard$/
       '/dashboard'
+
+    when /^the community show page$/
+      '/communities/1'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

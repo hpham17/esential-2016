@@ -20,6 +20,7 @@ Scenario: google map dynamic display
   And I should be able to zoom in and out
 
 Scenario: communities on the map
+  Then I should see three markers
   Then I should see a marker placed at zipcode "94704"
   And I should see a marker placed at zipcode "94601"
   And I should see a marker placed at zipcode "94101"

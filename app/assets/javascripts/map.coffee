@@ -68,7 +68,7 @@ capture = (i, map, community) ->
 build_results_container = (community, i) ->
   [
     "<div class='result'>",
-    "  <h5><a href='/communities/#{i+1}'</h5>",
+    "  <h5><a id='#{community['name']}' href='/communities/#{i+1}'>",
       community['name'],
     "    </a></h5>",
     "  <p>",

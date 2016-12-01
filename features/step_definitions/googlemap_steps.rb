@@ -18,7 +18,9 @@ Given(/^the following communities with addresses exist:$/) do |communities_table
 end
 
 When(/^I follow the link in the info window$/) do
-  pending
+  within('.gm-style-iw') do
+    click_link('Berkeley')
+  end
 end
 
 Then(/^I should see its info window$/) do
@@ -29,4 +31,10 @@ end
 
 Then(/^I should see a marker placed at zipcode "([^"]*)"$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see a three markers$/) do |arg1|
+  within('#markers') do
+    expect(page).to have_selector('div', count: 4)
+  end
 end
