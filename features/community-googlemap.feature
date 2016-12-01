@@ -18,12 +18,3 @@ Background:
 Scenario: google map dynamic display
   Then I should see a Google map
   And I should be able to zoom in and out
-
-@javascript
-Scenario: display community profile
-  Then I should see markers on the map
-  When I click on the marker for "Berkeley"
-  Then I should see its info window
-  And I follow the link in the info window
-  Then I should be on the community show page
-  And I should see "Community Profile"
