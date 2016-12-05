@@ -15,6 +15,6 @@ Please visit our [website](https://esential-2016.herokuapp.com) to get involved.
 
 Clone or fork repo and run rake db:setup.
 
-Our cucumber tests utilizes Poltergeist with PhantomJS as our driver for Capybara so make sure to follow the [directions]https://github.com/teampoltergeist/poltergeist#user-content-installing-phantomjs to install PhantomJS on your local machine.
+Our cucumber tests utilizes Poltergeist with PhantomJS as our driver for Capybara so make sure to follow the [directions](https://github.com/teampoltergeist/poltergeist#user-content-installing-phantomjs) to install PhantomJS on your local machine.
 
 That's it!
