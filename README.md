@@ -10,3 +10,11 @@
 Esential is a non-profit organization that aims to connect local communities with low-income individuals who are in need of a low interest rate loan. By signing up for an account, community members will be able to list the amount they wish to loan with a desired interest rate. Individuals in need will be able to search for a loan whose terms they can agree on and arrange to meet in person with the loaner.
 
 Please visit our [website](https://esential-2016.herokuapp.com) to get involved.
+
+## Setup
+
+Clone or fork repo and run rake db:setup.
+
+Our cucumber tests utilizes Poltergeist with PhantomJS as our driver for Capybara so make sure to follow the [directions]https://github.com/teampoltergeist/poltergeist#user-content-installing-phantomjs to install PhantomJS on your local machine.
+
+That's it!
